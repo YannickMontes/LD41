@@ -122,8 +122,9 @@ GameObject:
   - component: {fileID: 4365104207721856}
   - component: {fileID: 114416788598176798}
   - component: {fileID: 65908230378538572}
-  - component: {fileID: 54916555867423606}
   - component: {fileID: 114862218573113402}
+  - component: {fileID: 54322734309458288}
+  - component: {fileID: 114065660154584578}
   m_Layer: 0
   m_Name: Buggy
   m_TagString: Enemy
@@ -262,7 +263,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1737023417304342}
   m_LocalRotation: {x: -0, y: 0.29350045, z: -0, w: 0.95595896}
-  m_LocalPosition: {x: 0, y: 0.207, z: 21.9}
+  m_LocalPosition: {x: 0, y: 0, z: 21.9}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children:
   - {fileID: 4586433384047698}
@@ -793,7 +794,7 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1915550699551430}
   m_Mesh: {fileID: 4300010, guid: ade5db096b8eb634187a3b711d94d31f, type: 3}
---- !u!54 &54916555867423606
+--- !u!54 &54322734309458288
 Rigidbody:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -837,6 +838,20 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114065660154584578
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1737023417304342}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6fb1a21d94bb20543847af5c859dda0c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  limit: 5
+  coeff: 15
+  currentSpeed: 0
 --- !u!114 &114416788598176798
 MonoBehaviour:
   m_ObjectHideFlags: 1
