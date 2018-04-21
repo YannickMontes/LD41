@@ -9,7 +9,6 @@ public abstract class Weapon : MonoBehaviour
         m_name = name;
     }
 
-
     public abstract void HitEnemy(); 
 
     #region Private
