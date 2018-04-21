@@ -10,8 +10,8 @@ public class Shotgun : Gun
     {
     }
 
-    protected override void OnEnemyHit(Enemy enemy, Vector3 direction)
+    protected override void OnEnemyHit(Enemy enemy, Vector3 groundHit)
     {
-        PaintPlane(enemy, direction);
+        PaintPlane(enemy, groundHit);
     }
 }

@@ -23,17 +23,31 @@ public abstract class Gun : Weapon {
     {
         //TODO: FX
 
-        RaycastHit hitPoint;
-        if (Physics.Raycast(transform.position, m_camera.transform.forward, out hitPoint, m_range))
+        RaycastHit[] hitPoints = null;
+        hitPoints = Physics.RaycastAll(m_camera.transform.position, m_camera.transform.forward, m_range);
+        if (hitPoints.Length > 0)
         {
-            Debug.DrawRay(transform.position, m_camera.transform.forward, Color.blue);
-            Enemy enemy = hitPoint.transform.GetComponent<Enemy>();
-            if (enemy != null)
+            List<Enemy> enemies = new List<Enemy>();
+            RaycastHit ground = new RaycastHit();
+            foreach (RaycastHit hit in hitPoints)
             {
-                OnEnemyHit(enemy, enemy.transform.position - m_camera.transform.position);
+                Enemy enemy = hit.transform.GetComponent<Enemy>();
+                if (enemy != null)
+                {
+                    enemies.Add(enemy);
+                }
+                else if (hit.transform.tag == "PaintingZone")
+                {
+                    ground = hit;
+                }
+            }
+            foreach (Enemy enemy in enemies)
+            {
+                OnEnemyHit(enemy, ground.point);
+
             }
         }
     }
 
-    protected abstract void OnEnemyHit(Enemy enemy, Vector3 direction);
+    protected abstract void OnEnemyHit(Enemy enemy, Vector3 groundHit);
 }

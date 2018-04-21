@@ -8,6 +8,8 @@ TagManager:
   - Surface
   - Colors
   - Enemy
+  - FxTemporaire
+  - PaintingZone
   layers:
   - Default
   - TransparentFX

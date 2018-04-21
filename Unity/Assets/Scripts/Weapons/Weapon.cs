@@ -57,15 +57,14 @@ public abstract class Weapon : MonoBehaviour
         Destroy(particles, 3.0f);
     }
 
-    protected void PaintPlane(Enemy enemyScript, Vector3 direction)
+    protected void PaintPlane(Enemy enemyScript, Vector3 groundHit)
     {
         Vector3 whereToSpawn = enemyScript.transform.position;
         Quaternion whereToLookSplatter = Quaternion.identity;
-        if (direction != Vector3.zero)
+        if (groundHit != Vector3.zero)
         {
-            direction = new Vector3(direction.x, 0.0f, direction.z).normalized;
-            whereToSpawn = enemyScript.transform.position + direction * ((splatSprite.rect.height / 2) /100);
-            whereToLookSplatter = Quaternion.identity;
+            whereToSpawn = groundHit;
+
         }
 
         whereToSpawn = new Vector3(whereToSpawn.x, 0.0f, whereToSpawn.z);
