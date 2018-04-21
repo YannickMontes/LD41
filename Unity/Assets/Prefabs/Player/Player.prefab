@@ -240,7 +240,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4709535831936160}
   - component: {fileID: 114394171219009564}
-  - component: {fileID: 114992415509075514}
+  - component: {fileID: 114964936139358908}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -957,7 +957,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_name: Shotgun
-  splatSprite: {fileID: 0}
+  splatSprite: {fileID: 21300000, guid: c61d482530dbea646a86becd2ab2295a, type: 3}
   m_splatPrefab: {fileID: 1004157668280934, guid: 33db6729b0ce0fc4ab9c36b4caf4a279,
     type: 2}
   m_animator: {fileID: 0}
@@ -1098,7 +1098,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 8bc94ec6ed537e743b481638bdcd503d, type: 3}
   m_JumpSound: {fileID: 8300000, guid: 5897aeed9b676024fbb8c694b421a861, type: 3}
   m_LandSound: {fileID: 8300000, guid: 3b09d59f4499d45428baa7a21e954296, type: 3}
---- !u!114 &114992415509075514
+--- !u!114 &114964936139358908
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}

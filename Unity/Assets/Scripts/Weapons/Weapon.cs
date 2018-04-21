@@ -57,13 +57,23 @@ public abstract class Weapon : MonoBehaviour
         Destroy(particles, 3.0f);
     }
 
-    protected void PaintPlane(Enemy enemyScript)
+    protected void PaintPlane(Enemy enemyScript, Vector3 direction)
     {
-        GameObject spriteObject = Instantiate(m_splatPrefab, enemyScript.transform.position, Quaternion.identity);
+        Vector3 whereToSpawn = enemyScript.transform.position;
+        Quaternion whereToLookSplatter = Quaternion.identity;
+        if (direction != Vector3.zero)
+        {
+            direction = new Vector3(direction.x, 0.0f, direction.z).normalized;
+            whereToSpawn = enemyScript.transform.position + direction * ((splatSprite.rect.height / 2) /100);
+            whereToLookSplatter = Quaternion.identity;
+        }
+
+        whereToSpawn = new Vector3(whereToSpawn.x, 0.0f, whereToSpawn.z);
+        GameObject spriteObject = Instantiate(m_splatPrefab, whereToSpawn, whereToLookSplatter);
         SpriteRenderer spriteRenderer = spriteObject.GetComponent<SpriteRenderer>();
         spriteRenderer.color = enemyScript.GetColor();
-        spriteRenderer.sprite = SplatSprite;
-        spriteObject.transform.LookAt(enemyScript.transform.position + Vector3.up);
+        spriteRenderer.sprite = splatSprite;
+        spriteObject.transform.LookAt(spriteObject.transform.position + Vector3.up);
 
         LaunchSplashParticles(enemyScript);
 

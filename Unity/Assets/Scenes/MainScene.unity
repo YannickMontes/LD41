@@ -225,23 +225,6 @@ Prefab:
 Transform:
   m_PrefabParentObject: {fileID: 400000, guid: d209be13548e70947bc39053977ce977, type: 2}
   m_PrefabInternal: {fileID: 34295611}
---- !u!1 &45443087 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1934351896887036, guid: 68cfbc277afdb33478d1b9b06153b8be,
-    type: 2}
-  m_PrefabInternal: {fileID: 1804014478}
---- !u!114 &45443088
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 45443087}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3f6b44ef8dd642247be76b4190241f6c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cameraTop: {fileID: 1389212218}
 --- !u!1001 &65671513
 Prefab:
   m_ObjectHideFlags: 0
@@ -3962,6 +3945,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 114964936139358908, guid: 68cfbc277afdb33478d1b9b06153b8be,
+        type: 2}
+      propertyPath: cameraTop
+      value: 
+      objectReference: {fileID: 1389212218}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 68cfbc277afdb33478d1b9b06153b8be, type: 2}
   m_IsPrefabParent: 0
