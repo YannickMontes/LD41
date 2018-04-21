@@ -18,17 +18,11 @@ public class ArtExport : MonoBehaviour {
     }
 
 
-    void Awake()
-    {
-        renderTexture = cameraTop.targetTexture;
-        exportArtToPNG();
-        Debug.Log("c'est fini l'export tamere");
-    }
-
 
 
     public void exportArtToPNG()
     {
+        renderTexture = cameraTop.targetTexture;
         int width = renderTexture.width;
         int height = renderTexture.height;
 

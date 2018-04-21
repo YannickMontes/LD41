@@ -35,6 +35,8 @@ public class PlayerController : MonoBehaviour {
         {
             SwitchWeapon();
         }
+        if (InputScreenShot())
+            this.GetComponent<ArtExport>().exportArtToPNG();
     }
 
     private void CastWeapon()
@@ -62,5 +64,10 @@ public class PlayerController : MonoBehaviour {
     private bool InputSwitchWeapon()
     {
         return Input.GetKeyDown(KeyCode.S);
+    }
+
+    private bool InputScreenShot()
+    {
+        return Input.GetKeyDown(KeyCode.P);
     }
 }
