@@ -33,6 +33,9 @@ public class Hammer : Weapon
         spriteRenderer.sprite = SplatSprite;
         spriteObject.transform.LookAt(enemyScript.transform.position + Vector3.up);
 
+        GameObject particles = Instantiate(m_particlesPrefab, enemyScript.transform.position, Quaternion.identity);
+        Destroy(particles, 3.0f);
+
         enemyScript.Die();
     }
 }

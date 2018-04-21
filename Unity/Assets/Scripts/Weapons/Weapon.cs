@@ -65,5 +65,8 @@ public abstract class Weapon : MonoBehaviour
     [SerializeField]
     protected Animator m_animator;
 
+    [SerializeField]
+    protected GameObject m_particlesPrefab;
+
     #endregion
 }
