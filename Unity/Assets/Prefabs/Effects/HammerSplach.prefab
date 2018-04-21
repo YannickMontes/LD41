@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 198802567339236502}
   - component: {fileID: 199628090733467466}
   - component: {fileID: 114174039758134594}
+  - component: {fileID: 114591134293000608}
   m_Layer: 0
   m_Name: HammerSplach
   m_TagString: FxTemporaire
@@ -147,6 +148,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   OnlyDeactivate: 0
+--- !u!114 &114591134293000608
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1092269019447652}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af32f875b867af14aaac2db601477c22, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_colorsToChange:
+  - {fileID: 198484805721018846}
+  - {fileID: 198269568630460322}
 --- !u!198 &198269568630460322
 ParticleSystem:
   m_ObjectHideFlags: 1
