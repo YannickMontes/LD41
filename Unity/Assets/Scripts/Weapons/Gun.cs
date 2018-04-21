@@ -1,16 +1,39 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Gun : MonoBehaviour {
+public abstract class Gun : Weapon {
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    [SerializeField]
+    protected float m_range;
+
+    protected Camera m_camera;
+
+    private void Start()
+    {
+        m_camera = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
+    }
+
+    public Gun(string name) : base(name)
+    {
+    }
+
+    public override void CastWeaponSkill()
+    {
+        //TODO: FX
+
+        RaycastHit hitPoint;
+        if (Physics.Raycast(transform.position, m_camera.transform.forward, out hitPoint, m_range))
+        {
+            Debug.DrawRay(transform.position, m_camera.transform.forward);
+            Enemy enemy = hitPoint.transform.GetComponent<Enemy>();
+            if (enemy != null)
+            {
+                OnEnemyHit(enemy);
+            }
+        }
+    }
+
+    protected abstract void OnEnemyHit(Enemy enemy);
 }

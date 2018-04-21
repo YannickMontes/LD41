@@ -9,7 +9,7 @@ public abstract class Weapon : MonoBehaviour
         m_name = name;
     }
 
-    public abstract void HitEnemy();
+    public abstract void CastWeaponSkill();
 
     public GameObject SplatPrefab
     {
@@ -48,6 +48,26 @@ public abstract class Weapon : MonoBehaviour
         {
             m_animator = value;
         }
+    }
+
+    protected void LaunchSplashParticles(Enemy enemyScript)
+    {
+        GameObject particles = Instantiate(m_particlesPrefab, enemyScript.transform.position, Quaternion.identity);
+        particles.GetComponent<ParticlesSplasher>().SetColor(enemyScript.GetColor());
+        Destroy(particles, 3.0f);
+    }
+
+    protected void PaintPlane(Enemy enemyScript)
+    {
+        GameObject spriteObject = Instantiate(m_splatPrefab, enemyScript.transform.position, Quaternion.identity);
+        SpriteRenderer spriteRenderer = spriteObject.GetComponent<SpriteRenderer>();
+        spriteRenderer.color = enemyScript.GetColor();
+        spriteRenderer.sprite = SplatSprite;
+        spriteObject.transform.LookAt(enemyScript.transform.position + Vector3.up);
+
+        LaunchSplashParticles(enemyScript);
+
+        enemyScript.Die();
     }
 
 

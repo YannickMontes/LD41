@@ -10,7 +10,7 @@ public class Hammer : Weapon
     
     }
 
-    public override void HitEnemy()
+    public override void CastWeaponSkill()
     {
         if (m_animator)
             m_animator.SetBool("TriggerHammerHit", true);
@@ -25,18 +25,5 @@ public class Hammer : Weapon
         }
     }
 
-    private void PaintPlane(Enemy enemyScript)
-    {
-        GameObject spriteObject = Instantiate(m_splatPrefab , enemyScript.transform.position, Quaternion.identity);
-        SpriteRenderer spriteRenderer = spriteObject.GetComponent<SpriteRenderer>();
-        spriteRenderer.color = enemyScript.GetColor();
-        spriteRenderer.sprite = SplatSprite;
-        spriteObject.transform.LookAt(enemyScript.transform.position + Vector3.up);
 
-        GameObject particles = Instantiate(m_particlesPrefab, enemyScript.transform.position, Quaternion.identity);
-        particles.GetComponent<ParticlesSplasher>().SetColor(enemyScript.GetColor());
-        Destroy(particles, 3.0f);
-
-        enemyScript.Die();
-    }
 }
