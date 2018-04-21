@@ -29,7 +29,7 @@ public class PlayerController : MonoBehaviour {
     {
         if (InputHit())
         {
-            HitWeapon();
+            CastWeapon();
         }
         if (InputSwitchWeapon())
         {
@@ -37,7 +37,7 @@ public class PlayerController : MonoBehaviour {
         }
     }
 
-    private void HitWeapon()
+    private void CastWeapon()
     {
         m_currentWeapon.CastWeaponSkill();
     }
