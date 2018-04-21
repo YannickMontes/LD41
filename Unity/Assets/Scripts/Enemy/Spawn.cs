@@ -24,6 +24,7 @@ public class Spawn : MonoBehaviour {
 
     public void SpawnEnemies()
     {
+        currentMobNumber = 0;
         Enemies = new GameObject[mobNumber];
         InvokeRepeating("SpawnEnemy", beginTime, spawnDelay);
     }
@@ -37,6 +38,7 @@ public class Spawn : MonoBehaviour {
         else
         {
             GameObject mob = Instantiate(mobPrefab, new Vector3(this.transform.position.x, 0.0f, this.transform.position.z), Quaternion.identity);
+            mob.GetComponent<Enemy>().AssignMaterial(mobMaterial);
             Enemies[currentMobNumber]=mob;
         }
         currentMobNumber++;

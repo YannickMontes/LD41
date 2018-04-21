@@ -5,11 +5,12 @@ using UnityEngine;
 public class EnemySpawner : MonoBehaviour {
 
     [SerializeField]
-    private GameObject spawn;
+    private List<GameObject> spawn;
 
 	// Use this for initialization
 	void Start () {
-        spawn.GetComponent<Spawn>().SpawnEnemies();
+        for(int i = 0; i < 3; i++)
+            spawn[i].GetComponent<Spawn>().SpawnEnemies();
 	}
 	
 	// Update is called once per frame

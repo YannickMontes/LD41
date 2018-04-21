@@ -10,6 +10,14 @@ public abstract class Enemy : MonoBehaviour {
     [SerializeField]
     protected Material material;
 
+    [SerializeField]
+    GameObject targetPrefab;
+
+    GameObject target = null;
+
+    float width = 70;
+    float height = 100;
+
     Movement movement;
 
     private void Start()
@@ -18,6 +26,9 @@ public abstract class Enemy : MonoBehaviour {
             this.material = selfReferences[0].GetComponent<MeshRenderer>().material;
 
         this.movement = this.GetComponent<Movement>();
+
+        target = Instantiate(targetPrefab, new Vector3(this.transform.position.x, 0.0f, this.transform.position.z), Quaternion.identity);
+        target.transform.position = new Vector3(UnityEngine.Random.Range(-width / 2, width / 2), 0, UnityEngine.Random.Range(-height / 2, height / 2));
     }
 
     public void AssignMaterial(Material material)
@@ -41,6 +52,6 @@ public abstract class Enemy : MonoBehaviour {
 
     private void Update()
     {
-        this.movement.Move();
+        this.movement.Move(target);
     }
 }

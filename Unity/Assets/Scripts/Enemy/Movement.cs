@@ -14,6 +14,6 @@ public abstract class Movement : MonoBehaviour {
 		
 	}
 
-    public abstract void Move();
+    public abstract void Move(GameObject target);
    
 }
