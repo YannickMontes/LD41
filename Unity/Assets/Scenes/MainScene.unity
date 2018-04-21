@@ -402,6 +402,80 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9a1c8d87acb6fc54aa2d02189dfdc0cc, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1394593221 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1962757213015172, guid: 68cfbc277afdb33478d1b9b06153b8be,
+    type: 2}
+  m_PrefabInternal: {fileID: 1804014478}
+--- !u!65 &1394593223
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1394593221}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1394593224
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1394593221}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc940c70f2dd514489bcb2d2e2fbb5ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_name: Hammer
+  splatSprite: {fileID: 21300000, guid: 9dad6916cb6dcab49a0404ebbcdd7595, type: 3}
+  m_splatPrefab: {fileID: 1004157668280934, guid: 33db6729b0ce0fc4ab9c36b4caf4a279,
+    type: 2}
+--- !u!1001 &1733765852
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4365104207721856, guid: d71b658c7b125c648b0aadca2ae0f30b, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4365104207721856, guid: d71b658c7b125c648b0aadca2ae0f30b, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4365104207721856, guid: d71b658c7b125c648b0aadca2ae0f30b, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4365104207721856, guid: d71b658c7b125c648b0aadca2ae0f30b, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4365104207721856, guid: d71b658c7b125c648b0aadca2ae0f30b, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4365104207721856, guid: d71b658c7b125c648b0aadca2ae0f30b, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4365104207721856, guid: d71b658c7b125c648b0aadca2ae0f30b, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4365104207721856, guid: d71b658c7b125c648b0aadca2ae0f30b, type: 2}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: d71b658c7b125c648b0aadca2ae0f30b, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1001 &1762279583
 Prefab:
   m_ObjectHideFlags: 0

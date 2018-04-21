@@ -5,23 +5,41 @@ using UnityEngine;
 public abstract class Enemy : MonoBehaviour {
 
     [SerializeField]
-    private Color m_color;
+    protected List<GameObject> selfReferences;
 
-    public Color Color
+    [SerializeField]
+    protected Material material;
+
+    public Material Material
     {
         get
         {
-            return m_color;
+            return material;
         }
 
         set
         {
-            m_color = value;
+            material = value;
+        }
+    }
+
+    private void Start()
+    {
+        if(selfReferences.Count > 0)
+            this.material = selfReferences[0].GetComponent<MeshRenderer>().material;
+    }
+
+    public void AssignMaterial(Material material)
+    {
+        this.material = material;
+        foreach (GameObject selfref in selfReferences)
+        {
+            selfref.GetComponent<MeshRenderer>().material = material;
         }
     }
 
     public void Die()
     {
-        Destroy(gameObject, 1.0f);
+        Destroy(gameObject);
     }
 }

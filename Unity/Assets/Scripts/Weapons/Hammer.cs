@@ -21,10 +21,18 @@ public class Hammer : Weapon
         Enemy enemyScript = collision.collider.gameObject.GetComponent<Enemy>();
         if (enemyScript != null)
         {
-            Color enemyColor = enemyScript.Color;
-            enemyScript.Die();
-            GameObject spriteObject = Instantiate(m_spritePrefab);
-            spriteObject.GetComponent<SpriteRenderer>().color = enemyColor;
+            PaintPlane(enemyScript);
         }
+    }
+
+    private void PaintPlane(Enemy enemyScript)
+    {
+        GameObject spriteObject = Instantiate(m_splatPrefab , enemyScript.transform.position, Quaternion.identity);
+        SpriteRenderer spriteRenderer = spriteObject.GetComponent<SpriteRenderer>();
+        spriteRenderer.color = enemyScript.Material.color;
+        spriteRenderer.sprite = SplatSprite;
+        spriteObject.transform.LookAt(enemyScript.transform.position + Vector3.up);
+
+        enemyScript.Die();
     }
 }

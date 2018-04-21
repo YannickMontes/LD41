@@ -9,7 +9,34 @@ public abstract class Weapon : MonoBehaviour
         m_name = name;
     }
 
-    public abstract void HitEnemy(); 
+    public abstract void HitEnemy();
+
+    public GameObject SplatPrefab
+    {
+        get
+        {
+            return m_splatPrefab;
+        }
+
+        set
+        {
+            m_splatPrefab = value;
+        }
+    }
+
+    public Sprite SplatSprite
+    {
+        get
+        {
+            return splatSprite;
+        }
+
+        set
+        {
+            splatSprite = value;
+        }
+    }
+
 
     #region Private
 
@@ -17,7 +44,10 @@ public abstract class Weapon : MonoBehaviour
     protected string m_name;
 
     [SerializeField]
-    protected GameObject m_spritePrefab;
+    protected Sprite splatSprite;
+
+    [SerializeField]
+    protected GameObject m_splatPrefab;
 
     #endregion
 }

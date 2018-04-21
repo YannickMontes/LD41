@@ -120,9 +120,10 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4365104207721856}
+  - component: {fileID: 114416788598176798}
   m_Layer: 0
   m_Name: Buggy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -258,8 +259,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1737023417304342}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.903775, y: -0.93, z: -2.2951398}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children:
   - {fileID: 4586433384047698}
   m_Father: {fileID: 0}
@@ -806,3 +807,18 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114416788598176798
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1737023417304342}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d4e8139fddfc6945a41f8cdd6e27147, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  selfReferences:
+  - {fileID: 1288548178689370}
+  - {fileID: 1052331004587174}
+  material: {fileID: 0}
