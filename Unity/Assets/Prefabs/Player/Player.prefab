@@ -75,6 +75,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4379925123601204}
+  - component: {fileID: 95765384211664172}
   m_Layer: 0
   m_Name: Hammer
   m_TagString: Untagged
@@ -204,6 +205,8 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4286092532529380}
+  - component: {fileID: 65929246004065074}
+  - component: {fileID: 114365140377480162}
   m_Layer: 0
   m_Name: Pivot
   m_TagString: Untagged
@@ -272,7 +275,7 @@ Transform:
   m_GameObject: {fileID: 1757914293534508}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 3.0499997, y: -0, z: -0}
-  m_LocalScale: {x: 0.7675737, y: 0.7675736, z: 0.7675735}
+  m_LocalScale: {x: 0.9663936, y: 0.96639353, z: 0.96639335}
   m_Children:
   - {fileID: 4255552807212022}
   - {fileID: 4976697064540256}
@@ -288,14 +291,14 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1962757213015172}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: 0.019436628, y: 0.06121178, z: -0.08840725, w: 0.9940119}
+  m_LocalPosition: {x: 0.77, y: -0.02, z: -0.32}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4275968166627904}
   m_Father: {fileID: 4379925123601204}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 2.835, y: 6.8, z: -9.997001}
 --- !u!4 &4379925123601204
 Transform:
   m_ObjectHideFlags: 1
@@ -675,6 +678,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!65 &65929246004065074
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1962757213015172}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!81 &81479758333020570
 AudioListener:
   m_ObjectHideFlags: 1
@@ -779,6 +794,38 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!95 &95765384211664172
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1643697449731184}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f8ddc433f4354304098ff019857439d9, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114365140377480162
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1962757213015172}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc940c70f2dd514489bcb2d2e2fbb5ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_name: Hammer
+  splatSprite: {fileID: 21300000, guid: 9dad6916cb6dcab49a0404ebbcdd7595, type: 3}
+  m_splatPrefab: {fileID: 1004157668280934, guid: 33db6729b0ce0fc4ab9c36b4caf4a279,
+    type: 2}
 --- !u!114 &114726603525219054
 MonoBehaviour:
   m_ObjectHideFlags: 1
