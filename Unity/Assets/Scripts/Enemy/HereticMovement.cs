@@ -5,25 +5,41 @@ using UnityEngine;
 
 public class HereticMovement : Movement {
 
+    float width = 70;
+    float height = 100;
 
-    public float limit = 5.0f;
-    public float coeff = 15f;
-    public float currentSpeed;
+    public GameObject target = null;
+    public GameObject ground = null;
 
     public override void Move()
     {
-        
-        Rigidbody rb = this.GetComponent<Rigidbody>();
-        if(rb.velocity.magnitude <= limit)
-            rb.AddForce(transform.forward * coeff);
+        Rigidbody rb = GetComponent<Rigidbody>();
 
-        currentSpeed = rb.velocity.magnitude;
+        rb.velocity = transform.forward * 5;  
+
+        Vector3 direction = target.transform.position - transform.position;
+        Quaternion targetQuat = Quaternion.LookRotation(direction);
+
+        transform.rotation = Quaternion.Lerp(transform.rotation, targetQuat, Time.deltaTime);
+
+
+        if (Vector3.Distance(transform.position, target.transform.position) <= 2.0f)
+        {
+            width = ground.GetComponent<RectTransform>().rect.width;
+            height = ground.GetComponent<RectTransform>().rect.height;
+            float randomWidth = UnityEngine.Random.Range(-width/2, width/2);
+            float randomHeight = UnityEngine.Random.Range(-height/2, height/2);
+            target.transform.position = new Vector3(randomWidth, 0, randomHeight);
+        }
+
     }
+
 
     // Use this for initialization
     void Start () {
-		
-	}
+        
+
+    }
 	
 	// Update is called once per frame
 	void Update () {
