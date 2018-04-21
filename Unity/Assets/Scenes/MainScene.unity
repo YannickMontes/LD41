@@ -214,7 +214,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &829467778
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -398,6 +398,16 @@ Prefab:
     - target: {fileID: 1637837594021328, guid: 9a1c8d87acb6fc54aa2d02189dfdc0cc, type: 2}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 20250803204730460, guid: 9a1c8d87acb6fc54aa2d02189dfdc0cc,
+        type: 2}
+      propertyPath: m_NormalizedViewPortRect.width
+      value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 20250803204730460, guid: 9a1c8d87acb6fc54aa2d02189dfdc0cc,
+        type: 2}
+      propertyPath: m_NormalizedViewPortRect.x
+      value: 0.15
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9a1c8d87acb6fc54aa2d02189dfdc0cc, type: 2}
@@ -652,6 +662,11 @@ Prefab:
         type: 2}
       propertyPath: m_Pivot.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 224682821718912058, guid: 5af61616ba55fd84cb88d40904446608,
+        type: 2}
+      propertyPath: m_LocalScale.x
+      value: 0.7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5af61616ba55fd84cb88d40904446608, type: 2}
