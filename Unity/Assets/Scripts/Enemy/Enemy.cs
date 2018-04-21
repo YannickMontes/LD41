@@ -10,19 +10,6 @@ public abstract class Enemy : MonoBehaviour {
     [SerializeField]
     protected Material material;
 
-    public Material Material
-    {
-        get
-        {
-            return material;
-        }
-
-        set
-        {
-            material = value;
-        }
-    }
-
     private void Start()
     {
         if(selfReferences.Count > 0)
@@ -36,6 +23,11 @@ public abstract class Enemy : MonoBehaviour {
         {
             selfref.GetComponent<MeshRenderer>().material = material;
         }
+    }
+
+    public Color GetColor()
+    {
+        return this.material.GetColor("_EmissionColor");
     }
 
     public void Die()

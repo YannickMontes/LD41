@@ -190,7 +190,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4709535831936160}
-  - component: {fileID: 114167094798613654}
+  - component: {fileID: 114394171219009564}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -686,11 +686,11 @@ BoxCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1962757213015172}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 2.0057561, y: 2.1562195, z: 2.0315228}
+  m_Center: {x: 3.1029575, y: 0.012442387, z: 0.09000077}
 --- !u!81 &81479758333020570
 AudioListener:
   m_ObjectHideFlags: 1
@@ -812,21 +812,6 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!114 &114167094798613654
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1934351896887036}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e4a6b62083868fa478c0f53eb022a650, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  range: 1000000
-  sprite: {fileID: 21300000, guid: 3d7f0e255bdf32b4e8e001443c0d9e15, type: 3}
-  spritePrefab: {fileID: 1004157668280934, guid: 33db6729b0ce0fc4ab9c36b4caf4a279,
-    type: 2}
 --- !u!114 &114365140377480162
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -842,6 +827,20 @@ MonoBehaviour:
   splatSprite: {fileID: 21300000, guid: 9dad6916cb6dcab49a0404ebbcdd7595, type: 3}
   m_splatPrefab: {fileID: 1004157668280934, guid: 33db6729b0ce0fc4ab9c36b4caf4a279,
     type: 2}
+  m_animator: {fileID: 95765384211664172}
+--- !u!114 &114394171219009564
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1934351896887036}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d048a3a05fecb4e4a91a1e9989dccfe0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_weapons:
+  - {fileID: 114365140377480162}
 --- !u!114 &114726603525219054
 MonoBehaviour:
   m_ObjectHideFlags: 1

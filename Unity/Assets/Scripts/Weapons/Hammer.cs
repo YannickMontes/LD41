@@ -3,7 +3,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(BoxCollider))]
 public class Hammer : Weapon
 {
     public Hammer(string name) : base(name)
@@ -13,12 +12,13 @@ public class Hammer : Weapon
 
     public override void HitEnemy()
     {
-        //pLay anim
+        if (m_animator)
+            m_animator.SetBool("TriggerHammerHit", true);
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
-        Enemy enemyScript = collision.collider.gameObject.GetComponent<Enemy>();
+        Enemy enemyScript = other.gameObject.GetComponent<Enemy>();
         if (enemyScript != null)
         {
             PaintPlane(enemyScript);
@@ -29,7 +29,7 @@ public class Hammer : Weapon
     {
         GameObject spriteObject = Instantiate(m_splatPrefab , enemyScript.transform.position, Quaternion.identity);
         SpriteRenderer spriteRenderer = spriteObject.GetComponent<SpriteRenderer>();
-        spriteRenderer.color = enemyScript.Material.color;
+        spriteRenderer.color = enemyScript.GetColor();
         spriteRenderer.sprite = SplatSprite;
         spriteObject.transform.LookAt(enemyScript.transform.position + Vector3.up);
 

@@ -37,6 +37,19 @@ public abstract class Weapon : MonoBehaviour
         }
     }
 
+    public Animator Animator
+    {
+        get
+        {
+            return m_animator;
+        }
+
+        set
+        {
+            m_animator = value;
+        }
+    }
+
 
     #region Private
 
@@ -48,6 +61,9 @@ public abstract class Weapon : MonoBehaviour
 
     [SerializeField]
     protected GameObject m_splatPrefab;
+
+    [SerializeField]
+    protected Animator m_animator;
 
     #endregion
 }
