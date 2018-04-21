@@ -10,10 +10,27 @@ public abstract class Enemy : MonoBehaviour {
     [SerializeField]
     protected Material material;
 
+<<<<<<< HEAD
+=======
+    public Material Material
+    {
+        get
+        {
+            return material;
+        }
+
+        set
+        {
+            material = value;
+        }
+    }
+
+>>>>>>> 320eefc17befbb5c463e9167dddfdff7084a0555
     private void Start()
     {
         if(selfReferences.Count > 0)
             this.material = selfReferences[0].GetComponent<MeshRenderer>().material;
+
     }
 
     public void AssignMaterial(Material material)
