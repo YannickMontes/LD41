@@ -12,6 +12,8 @@ public abstract class Enemy : MonoBehaviour {
 
 <<<<<<< HEAD
 =======
+    Movement movement;
+
     public Material Material
     {
         get
@@ -31,6 +33,7 @@ public abstract class Enemy : MonoBehaviour {
         if(selfReferences.Count > 0)
             this.material = selfReferences[0].GetComponent<MeshRenderer>().material;
 
+        this.movement = this.GetComponent<Movement>();
     }
 
     public void AssignMaterial(Material material)
@@ -50,5 +53,10 @@ public abstract class Enemy : MonoBehaviour {
     public void Die()
     {
         Destroy(gameObject);
+    }
+
+    private void Update()
+    {
+        this.movement.Move();
     }
 }
