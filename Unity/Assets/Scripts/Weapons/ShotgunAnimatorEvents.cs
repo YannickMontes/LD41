@@ -9,6 +9,8 @@ public class ShotgunAnimatorEvents : MonoBehaviour {
 
     [SerializeField]
     private AudioSource gunAS;
+    [SerializeField]
+    private AudioSource reloadAS;
 
     public void SetIsRealoading()
     {
@@ -23,6 +25,11 @@ public class ShotgunAnimatorEvents : MonoBehaviour {
     public void PlayShootSound()
     {
         gunAS.Play();
+    }
+
+    public void PlayReloadSound()
+    {
+        reloadAS.Play();
     }
 
 }
