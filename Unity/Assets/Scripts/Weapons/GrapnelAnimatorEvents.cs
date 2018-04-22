@@ -10,6 +10,9 @@ public class GrapnelAnimatorEvents : MonoBehaviour {
     [SerializeField]
     private Collider grapnelGrabZone;
 
+    [SerializeField]
+    private AudioSource ssschlingAS;
+
     void Start()
     {
         grapnelGrabZone.enabled = false;
@@ -29,6 +32,11 @@ public class GrapnelAnimatorEvents : MonoBehaviour {
     public void ThrowEnemy()
     {
         grapnel.ThrowEnemyEffectively_IMeanItWillBeShot();
+    }
+
+    public void PlaySchlingSound()
+    {
+        ssschlingAS.Play();
     }
 
 }
