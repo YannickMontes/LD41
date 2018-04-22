@@ -71,7 +71,9 @@ public class PlayerController : MonoBehaviour {
 
     private bool InputSwitchWeapon()
     {
-        return Input.GetKeyDown(KeyCode.S);
+        if (m_currentWeapon as Shotgun != null && (m_currentWeapon as Shotgun).IsReloading)
+            return false;
+        return Input.GetAxis("Mouse ScrollWheel") != 0.0f;
     }
 
     private bool InputScreenShot()

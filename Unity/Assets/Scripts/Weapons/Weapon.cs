@@ -50,9 +50,10 @@ public abstract class Weapon : MonoBehaviour
         }
     }
 
-    protected void LaunchSplashParticles(Enemy enemyScript)
+    protected void LaunchSplashParticles(Enemy enemyScript, Vector3 upDir)
     {
         GameObject particles = Instantiate(m_particlesPrefab, enemyScript.transform.position, Quaternion.identity);
+        particles.transform.up = upDir;
         particles.GetComponent<ParticlesSplasher>().SetColor(enemyScript.GetColor());
         Destroy(particles, 3.0f);
     }
@@ -83,8 +84,14 @@ public abstract class Weapon : MonoBehaviour
             spriteObject.transform.rotation = Quaternion.LookRotation(direction);
         }
 
+        Vector3 upDirPart = Vector3.up;
 
-        LaunchSplashParticles(enemyScript);
+        if (this as Shotgun != null)
+        {
+            upDirPart = direction;
+        }
+
+        LaunchSplashParticles(enemyScript, upDirPart);
 
         enemyScript.Die();
     }
