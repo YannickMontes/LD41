@@ -30,9 +30,10 @@ public class Shotgun : Gun
         };
     }
 
-    protected override void OnEnemyHit(Enemy enemy, Vector3 groundHit)
+
+    protected override void OnEnemyHit(Enemy enemy, Vector3 groundHit, Vector3 direction)
     {
-        PaintPlane(enemy, groundHit);
+        PaintPlane(enemy, groundHit, direction);
     }
 
     public override void CastWeaponSkill()

@@ -57,22 +57,27 @@ public abstract class Weapon : MonoBehaviour
         Destroy(particles, 3.0f);
     }
 
-    protected void PaintPlane(Enemy enemyScript, Vector3 groundHit)
+    protected void PaintPlane(Enemy enemyScript, Vector3 groundHit, Vector3 direction)
     {
         Vector3 whereToSpawn = enemyScript.transform.position;
         Quaternion whereToLookSplatter = Quaternion.identity;
-        if (groundHit != Vector3.zero)
+        if (groundHit != Vector3.zero && direction != Vector3.zero)
         {
             whereToSpawn = groundHit;
-
         }
 
         whereToSpawn = new Vector3(whereToSpawn.x, 0.0f, whereToSpawn.z);
         GameObject spriteObject = Instantiate(m_splatPrefab, whereToSpawn, whereToLookSplatter);
-        SpriteRenderer spriteRenderer = spriteObject.GetComponent<SpriteRenderer>();
+        SpriteRenderer spriteRenderer = spriteObject.GetComponentInChildren<SpriteRenderer>();
+        spriteRenderer.sortingOrder = orderInLayer++;
         spriteRenderer.color = enemyScript.GetColor();
         spriteRenderer.sprite = splatSprite;
-        spriteObject.transform.LookAt(spriteObject.transform.position + Vector3.up);
+
+        if (direction != Vector3.zero)
+        {
+            spriteObject.transform.rotation = Quaternion.LookRotation(direction);
+        }
+
 
         LaunchSplashParticles(enemyScript);
 
@@ -96,6 +101,8 @@ public abstract class Weapon : MonoBehaviour
 
     [SerializeField]
     protected GameObject m_particlesPrefab;
+
+    private static int orderInLayer = 1;
 
     #endregion
 }

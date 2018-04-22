@@ -21,7 +21,7 @@ public class Hammer : Weapon
         Enemy enemyScript = other.gameObject.GetComponent<Enemy>();
         if (enemyScript != null)
         {
-            PaintPlane(enemyScript, Vector3.zero);
+            PaintPlane(enemyScript, Vector3.zero, Vector3.zero);
         }
     }
 
