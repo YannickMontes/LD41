@@ -60,6 +60,15 @@ public abstract class Weapon : MonoBehaviour
 
     protected void PaintPlane(Enemy enemyScript, Vector3 groundHit, Vector3 direction)
     {
+        //V1 Splash 
+        SplashConstantSprite(enemyScript, groundHit, direction);
+
+        //V2 Splash
+        SplashWithParticlesCollision(enemyScript, groundHit, direction);
+    }
+
+    private void SplashConstantSprite(Enemy enemyScript, Vector3 groundHit, Vector3 direction)
+    {
         Vector3 whereToSpawn = enemyScript.transform.position;
         Quaternion whereToLookSplatter = Quaternion.identity;
 
@@ -83,7 +92,10 @@ public abstract class Weapon : MonoBehaviour
         {
             spriteObject.transform.rotation = Quaternion.LookRotation(direction);
         }
+    }
 
+    private void SplashWithParticlesCollision(Enemy enemyScript, Vector3 groundHit, Vector3 direction)
+    {
         Vector3 upDirPart = Vector3.up;
 
         if (this as Shotgun != null)
@@ -95,6 +107,7 @@ public abstract class Weapon : MonoBehaviour
 
         enemyScript.Die();
     }
+
 
 
     #region Private
@@ -114,7 +127,7 @@ public abstract class Weapon : MonoBehaviour
     [SerializeField]
     protected GameObject m_particlesPrefab;
 
-    private static int orderInLayer = 1;
+    public static int orderInLayer = 1;
 
     #endregion
 }
