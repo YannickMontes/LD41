@@ -5,8 +5,12 @@ using UnityEngine;
 
 public class HereticMovement : Movement {
 
-    float width = 70;
-    float height = 100;
+    [SerializeField]
+    private GameObject map;
+
+
+    float width;
+    float height;
 
 
     public override void Move(GameObject targetGO)
@@ -36,7 +40,8 @@ public class HereticMovement : Movement {
     // Use this for initialization
     void Start () {
 
-        
+        width = map.transform.localScale.x;
+        height = map.transform.localScale.z;
 
     }
 	

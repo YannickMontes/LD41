@@ -15,8 +15,11 @@ public abstract class Enemy : MonoBehaviour {
 
     GameObject target = null;
 
-    float width = 70;
-    float height = 100;
+    [SerializeField]
+    private GameObject map;
+
+    float width;
+    float height;
 
     Movement movement;
 
@@ -27,8 +30,11 @@ public abstract class Enemy : MonoBehaviour {
 
         this.movement = this.GetComponent<Movement>();
 
+        width = map.transform.localScale.x;
+        height = map.transform.localScale.z;
         target = Instantiate(targetPrefab, new Vector3(this.transform.position.x, 0.0f, this.transform.position.z), Quaternion.identity);
         target.transform.position = new Vector3(UnityEngine.Random.Range(-width / 2, width / 2), 0, UnityEngine.Random.Range(-height / 2, height / 2));
+        target.transform.SetParent(GameManager.instance.targets.transform);
     }
 
     public void AssignMaterial(Material material)
@@ -55,4 +61,6 @@ public abstract class Enemy : MonoBehaviour {
     {
         this.movement.Move(target);
     }
+
+   
 }
