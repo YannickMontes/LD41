@@ -21,7 +21,15 @@ public abstract class Enemy : MonoBehaviour {
     float width;
     float height;
 
+    public float beginTime;    
+    public float lifeSpawn;
+
+    public GameObject origin;
+
     Movement movement;
+
+
+    bool moveInCanvas = true;
 
     private void Start()
     {
@@ -35,6 +43,8 @@ public abstract class Enemy : MonoBehaviour {
         target = Instantiate(targetPrefab, new Vector3(this.transform.position.x, 0.0f, this.transform.position.z), Quaternion.identity);
         target.transform.position = new Vector3(UnityEngine.Random.Range(-width / 2, width / 2), 0, UnityEngine.Random.Range(-height / 2, height / 2));
         target.transform.SetParent(GameManager.instance.targets.transform);
+
+        Invoke("runAway", lifeSpawn + beginTime);
     }
 
     public void AssignMaterial(Material material)
@@ -58,9 +68,23 @@ public abstract class Enemy : MonoBehaviour {
     }
 
     private void Update()
-    {
-        this.movement.Move(target);
+    {        
+        this.movement.Move(target, moveInCanvas);
+
+        if(!moveInCanvas && Vector3.Distance(origin.transform.position, this.transform.position) < 2.0f)
+        {
+            this.Die();
+        }
     }
 
-   
+    public void returnToOrigin()
+    {
+        target.transform.position = origin.transform.position;
+    }
+ 
+   public void runAway()
+    {
+        moveInCanvas = false;
+        returnToOrigin();
+    }
 }

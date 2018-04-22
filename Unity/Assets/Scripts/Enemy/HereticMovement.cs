@@ -13,7 +13,7 @@ public class HereticMovement : Movement {
     float height=0;
 
 
-    public override void Move(GameObject targetGO)
+    public override void Move(GameObject targetGO, bool canMoveInCanvas)
     {
         Rigidbody rb = GetComponent<Rigidbody>();
 
@@ -25,7 +25,7 @@ public class HereticMovement : Movement {
         transform.rotation = Quaternion.Lerp(transform.rotation, targetQuat, Time.deltaTime);
 
 
-        if (Vector3.Distance(transform.position, targetGO.transform.position) <= 2.0f)
+        if (Vector3.Distance(transform.position, targetGO.transform.position) <= 2.0f && canMoveInCanvas)
         {
             float randomWidth = UnityEngine.Random.Range(-width/2, width/2);
             float randomHeight = UnityEngine.Random.Range(-height/2, height/2);
@@ -33,6 +33,7 @@ public class HereticMovement : Movement {
         }
 
     }
+
 
 
     // Use this for initialization
