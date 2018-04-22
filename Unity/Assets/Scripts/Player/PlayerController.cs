@@ -93,6 +93,29 @@ public class PlayerController : MonoBehaviour {
 
     private bool InputHit()
     {
+        if (m_currentWeapon.CanChargeAttack)
+        {
+            if (Input.GetMouseButton(0))
+            {
+                m_mouseButtonHeldDown = true;
+                return false;
+            }
+            else
+            {
+                if (m_mouseButtonHeldDown)
+                {
+                    m_mouseButtonHeldDown = false;
+                    return true;
+                }
+                else
+                    return false;
+            }
+        }
+        else
+        {
+            return Input.GetMouseButtonDown(0);
+        }
+
         if (Input.GetMouseButton(0))
         {
             if (!m_currentWeapon.CanChargeAttack)
