@@ -19,13 +19,13 @@ public class Spawn : MonoBehaviour {
     [SerializeField]
     float beginTime;
 
-    private GameObject[] Enemies;
+    private GameObject Enemies;
     private int currentMobNumber=0;
 
-    public void SpawnEnemies()
+    public void SpawnEnemies(GameObject mobs)
     {
+        Enemies = mobs;
         currentMobNumber = 0;
-        Enemies = new GameObject[mobNumber];
         InvokeRepeating("SpawnEnemy", beginTime, spawnDelay);
     }
 
@@ -39,7 +39,7 @@ public class Spawn : MonoBehaviour {
         {
             GameObject mob = Instantiate(mobPrefab, new Vector3(this.transform.position.x, 0.0f, this.transform.position.z), Quaternion.identity);
             mob.GetComponent<Enemy>().AssignMaterial(mobMaterial);
-            Enemies[currentMobNumber]=mob;
+            mob.transform.SetParent(Enemies.transform);
         }
         currentMobNumber++;
         

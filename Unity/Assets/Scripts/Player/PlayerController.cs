@@ -7,6 +7,9 @@ public class PlayerController : MonoBehaviour {
     [SerializeField]
     private List<Weapon> m_weapons = new List<Weapon>();
 
+    [SerializeField]
+    private GameObject mobs;
+
     private Weapon m_currentWeapon = null;
 
 	// Use this for initialization
@@ -36,7 +39,12 @@ public class PlayerController : MonoBehaviour {
             SwitchWeapon();
         }
         if (InputScreenShot())
+        {
+            changeMobsStatus();
             this.GetComponent<ArtExport>().exportArtToPNG();
+            changeMobsStatus();
+        }
+            
     }
 
     private void CastWeapon()
@@ -69,5 +77,11 @@ public class PlayerController : MonoBehaviour {
     private bool InputScreenShot()
     {
         return Input.GetKeyDown(KeyCode.P);
+    }
+
+    private void changeMobsStatus()
+    {
+        this.gameObject.SetActive(!gameObject.activeSelf);
+        mobs.SetActive(!mobs.activeSelf);
     }
 }
