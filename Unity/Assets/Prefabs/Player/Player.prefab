@@ -2819,13 +2819,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_name: 
-  splatSprite: {fileID: 21300000, guid: c61d482530dbea646a86becd2ab2295a, type: 3}
+  splatSprite: {fileID: 21300000, guid: f0f6117c62840084080f489ad582200a, type: 3}
   m_splatPrefab: {fileID: 1004157668280934, guid: 33db6729b0ce0fc4ab9c36b4caf4a279,
     type: 2}
   m_animator: {fileID: 95682231059454614}
-  m_particlesPrefab: {fileID: 1092269019447652, guid: ee4e468f86d81fb46a606a8465c27410,
+  m_particlesPrefab: {fileID: 1092269019447652, guid: 8df656d1f1bfe834b8eb88366f6a4e77,
     type: 2}
-  grabZone: {fileID: 1673789775673332}
+  m_canChargeAttack: 0
+  minScaleHit: 1
+  maxScaleHit: 2
+  chargeTime: 0
+  grabZone: {fileID: 0}
   grabbedBug: {fileID: 0}
 --- !u!114 &114365140377480162
 MonoBehaviour:
