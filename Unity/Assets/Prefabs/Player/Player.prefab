@@ -2043,7 +2043,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_name: Hammer
-  splatSprite: {fileID: 21300000, guid: 9dad6916cb6dcab49a0404ebbcdd7595, type: 3}
+  splatSprite: {fileID: 21300000, guid: f0f6117c62840084080f489ad582200a, type: 3}
   m_splatPrefab: {fileID: 1004157668280934, guid: 33db6729b0ce0fc4ab9c36b4caf4a279,
     type: 2}
   m_animator: {fileID: 95765384211664172}
