@@ -61,17 +61,22 @@ public abstract class Weapon : MonoBehaviour
     {
         Vector3 whereToSpawn = enemyScript.transform.position;
         Quaternion whereToLookSplatter = Quaternion.identity;
-        if (groundHit != Vector3.zero && direction != Vector3.zero)
-        {
-            whereToSpawn = groundHit;
-        }
 
-        whereToSpawn = new Vector3(whereToSpawn.x, 0.0f, whereToSpawn.z);
+        whereToSpawn = new Vector3(whereToSpawn.x, 0.0f, whereToSpawn.z) + direction.normalized * 5.0f;
         GameObject spriteObject = Instantiate(m_splatPrefab, whereToSpawn, whereToLookSplatter);
         SpriteRenderer spriteRenderer = spriteObject.GetComponentInChildren<SpriteRenderer>();
         spriteRenderer.sortingOrder = orderInLayer++;
         spriteRenderer.color = enemyScript.GetColor();
         spriteRenderer.sprite = splatSprite;
+
+        GameObject splatterParent = GameObject.Find("Splatters");
+        if (splatterParent == null)
+        {
+            splatterParent = new GameObject("Splatters");
+            splatterParent.transform.position = Vector3.zero;
+            splatterParent.transform.rotation = Quaternion.identity;
+        }
+        spriteObject.transform.SetParent(splatterParent.transform);
 
         if (direction != Vector3.zero)
         {

@@ -31,6 +31,7 @@ public abstract class Gun : Weapon {
         {
             List<Enemy> enemies = new List<Enemy>();
             RaycastHit ground = new RaycastHit();
+            bool groundHitted = false;
             foreach (RaycastHit hit in hitPoints)
             {
                 Enemy enemy = hit.transform.GetComponent<Enemy>();
@@ -41,11 +42,16 @@ public abstract class Gun : Weapon {
                 else if (hit.transform.tag == "PaintingZone")
                 {
                     ground = hit;
+                    groundHitted = true;
                 }
             }
             foreach (Enemy enemy in enemies)
             {
-                Vector3 direction = ground.point - m_camera.transform.position;
+                Vector3 direction;
+                if (groundHitted)
+                    direction = ground.point - m_camera.transform.position;
+                else
+                    direction = enemy.transform.position - m_camera.transform.position;
                 Debug.DrawLine(m_camera.transform.position, ground.point,  Color.red, 2.0f);
                 direction = new Vector3(direction.x, 0.0f, direction.z);
                 OnEnemyHit(enemy, ground.point, direction);
