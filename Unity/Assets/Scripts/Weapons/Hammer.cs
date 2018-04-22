@@ -5,6 +5,10 @@ using UnityEngine;
 
 public class Hammer : Weapon
 {
+
+    [SerializeField]
+    private AudioSource sprootchAS;
+
     public Hammer(string name) : base(name)
     {
     
@@ -22,6 +26,7 @@ public class Hammer : Weapon
         if (enemyScript != null)
         {
             PaintPlane(enemyScript, Vector3.zero, Vector3.zero);
+            sprootchAS.Play();
         }
     }
 
