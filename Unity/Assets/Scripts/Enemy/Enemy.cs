@@ -15,8 +15,8 @@ public abstract class Enemy : MonoBehaviour {
 
     GameObject target = null;
 
-    float width = 70;
-    float height = 100;
+    float width = 50;
+    float height = 60;
 
     Movement movement;
 

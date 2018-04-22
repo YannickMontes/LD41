@@ -37,9 +37,11 @@ public class Spawn : MonoBehaviour {
         }
         else
         {
-            GameObject mob = Instantiate(mobPrefab, new Vector3(this.transform.position.x, 0.0f, this.transform.position.z), Quaternion.identity);
+           
+            GameObject mob = Instantiate(mobPrefab, new Vector3(this.transform.position.x, 0.0f, this.transform.position.z), this.transform.rotation);
             mob.GetComponent<Enemy>().AssignMaterial(mobMaterial);
             mob.transform.SetParent(Enemies.transform);
+            
         }
         currentMobNumber++;
         

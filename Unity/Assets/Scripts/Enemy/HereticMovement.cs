@@ -5,8 +5,8 @@ using UnityEngine;
 
 public class HereticMovement : Movement {
 
-    float width = 70;
-    float height = 100;
+    float width = 50;
+    float height = 60;
 
 
     public override void Move(GameObject targetGO)
