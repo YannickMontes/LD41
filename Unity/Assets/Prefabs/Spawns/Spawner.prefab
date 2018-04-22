@@ -206,6 +206,7 @@ MonoBehaviour:
   mobMaterial: {fileID: 2100000, guid: 30c76f43697a1874ba071b1a7d05e2d7, type: 2}
   spawnDelay: 1
   beginTime: 0
+  lifeSpawn: 60
 --- !u!114 &114076463903745126
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -238,7 +239,8 @@ MonoBehaviour:
   mobPrefab: {fileID: 1737023417304342, guid: d71b658c7b125c648b0aadca2ae0f30b, type: 2}
   mobMaterial: {fileID: 2100000, guid: ec4fd2e1fa2777d4e9f464b6de7aba65, type: 2}
   spawnDelay: 1
-  beginTime: 20
+  beginTime: 50
+  lifeSpawn: 0
 --- !u!114 &114894975566781314
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -254,7 +256,8 @@ MonoBehaviour:
   mobPrefab: {fileID: 1737023417304342, guid: d71b658c7b125c648b0aadca2ae0f30b, type: 2}
   mobMaterial: {fileID: 2100000, guid: ede084fe38c23864f81fd5e5afbb2032, type: 2}
   spawnDelay: 3
-  beginTime: 30
+  beginTime: 47.35
+  lifeSpawn: 0
 --- !u!114 &114912193730807454
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -270,7 +273,8 @@ MonoBehaviour:
   mobPrefab: {fileID: 1737023417304342, guid: d71b658c7b125c648b0aadca2ae0f30b, type: 2}
   mobMaterial: {fileID: 2100000, guid: f5f24a950653b2c4087573d4e1768173, type: 2}
   spawnDelay: 1
-  beginTime: 20
+  beginTime: 50
+  lifeSpawn: 0
 --- !u!114 &114928405684804116
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -286,4 +290,5 @@ MonoBehaviour:
   mobPrefab: {fileID: 1737023417304342, guid: d71b658c7b125c648b0aadca2ae0f30b, type: 2}
   mobMaterial: {fileID: 2100000, guid: 0342f742fe0c73b4b886679515db313c, type: 2}
   spawnDelay: 2
-  beginTime: 0
+  beginTime: 30
+  lifeSpawn: 0

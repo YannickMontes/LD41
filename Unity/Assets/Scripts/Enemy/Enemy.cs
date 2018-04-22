@@ -22,11 +22,13 @@ public abstract class Enemy : MonoBehaviour {
     float height;
 
     public float beginTime;    
-    public float lifeSpawn;
+    public float lifeSpawn = 60f;
 
     public GameObject origin;
 
     Movement movement;
+
+    public bool canMove = true;
 
 
     bool moveInCanvas = true;
@@ -69,11 +71,12 @@ public abstract class Enemy : MonoBehaviour {
 
     private void Update()
     {        
-        this.movement.Move(target, moveInCanvas);
+        if (canMove) {
+            this.movement.Move(target, moveInCanvas);
 
-        if(!moveInCanvas && Vector3.Distance(origin.transform.position, this.transform.position) < 2.0f)
-        {
-            this.Die();
+            if (!moveInCanvas && Vector3.Distance(origin.transform.position, this.transform.position) < 2.0f) {
+                this.Die();
+            }
         }
     }
 
