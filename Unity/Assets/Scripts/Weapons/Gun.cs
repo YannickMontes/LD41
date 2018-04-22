@@ -21,7 +21,7 @@ public abstract class Gun : Weapon {
     {
     }
 
-    public override void CastWeaponSkill()
+    public override void CastWeaponSkill(float chargeScale)
     {
         //TODO: FX
 

@@ -9,7 +9,7 @@ public abstract class Weapon : MonoBehaviour
         m_name = name;
     }
 
-    public abstract void CastWeaponSkill();
+    public abstract void CastWeaponSkill(float chargeScale);
 
     public GameObject SplatPrefab
     {
@@ -50,6 +50,56 @@ public abstract class Weapon : MonoBehaviour
         }
     }
 
+    public bool CanChargeAttack
+    {get
+        {
+            return m_canChargeAttack;
+        }
+        set
+        {
+            m_canChargeAttack = value;
+        }
+    }
+
+    public float MinScaleHit
+    {
+        get
+        {
+            return minScaleHit;
+        }
+
+        set
+        {
+            minScaleHit = value;
+        }
+    }
+
+    public float MaxScaleHit
+    {
+        get
+        {
+            return maxScaleHit;
+        }
+
+        set
+        {
+            maxScaleHit = value;
+        }
+    }
+
+    public float ChargeTime
+    {
+        get
+        {
+            return chargeTime;
+        }
+
+        set
+        {
+            chargeTime = value;
+        }
+    }
+
     protected void LaunchSplashParticles(Enemy enemyScript, Vector3 upDir)
     {
         GameObject particles = Instantiate(m_particlesPrefab, enemyScript.transform.position, Quaternion.identity);
@@ -58,16 +108,16 @@ public abstract class Weapon : MonoBehaviour
         Destroy(particles, 3.0f);
     }
 
-    protected void PaintPlane(Enemy enemyScript, Vector3 groundHit, Vector3 direction)
+    protected void PaintPlane(Enemy enemyScript, Vector3 groundHit, Vector3 direction, float chargeScale)
     {
         //V1 Splash 
-        SplashConstantSprite(enemyScript, groundHit, direction);
+        SplashConstantSprite(enemyScript, groundHit, direction, chargeScale);
 
         //V2 Splash
         SplashWithParticlesCollision(enemyScript, groundHit, direction);
     }
 
-    private void SplashConstantSprite(Enemy enemyScript, Vector3 groundHit, Vector3 direction)
+    private void SplashConstantSprite(Enemy enemyScript, Vector3 groundHit, Vector3 direction, float chargeScale)
     {
         Vector3 whereToSpawn = enemyScript.transform.position;
         Quaternion whereToLookSplatter = Quaternion.identity;
@@ -92,6 +142,8 @@ public abstract class Weapon : MonoBehaviour
         {
             spriteObject.transform.rotation = Quaternion.LookRotation(direction);
         }
+
+        spriteObject.transform.localScale *= chargeScale;
     }
 
     private void SplashWithParticlesCollision(Enemy enemyScript, Vector3 groundHit, Vector3 direction)
@@ -126,6 +178,18 @@ public abstract class Weapon : MonoBehaviour
 
     [SerializeField]
     protected GameObject m_particlesPrefab;
+
+    [SerializeField]
+    protected bool m_canChargeAttack;
+
+    [SerializeField]
+    protected float minScaleHit = 1.0f;
+
+    [SerializeField]
+    protected float maxScaleHit = 3.0f;
+
+    [SerializeField]
+    protected float chargeTime = 1.0f;
 
     public static int orderInLayer = 1;
 

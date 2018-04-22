@@ -2025,6 +2025,10 @@ MonoBehaviour:
   m_animator: {fileID: 95393201184677278}
   m_particlesPrefab: {fileID: 1092269019447652, guid: f272a2f6459735a4597c7ab0820a6b6b,
     type: 2}
+  m_canChargeAttack: 0
+  minScaleHit: 1
+  maxScaleHit: 1
+  chargeTime: 0
   m_range: 100
   shotgunHitParticles: {fileID: 1361300700691960, guid: f7bd6ccfe29c54f498b05e239ce51cdd,
     type: 2}
@@ -2049,6 +2053,10 @@ MonoBehaviour:
   m_animator: {fileID: 95765384211664172}
   m_particlesPrefab: {fileID: 1092269019447652, guid: ee4e468f86d81fb46a606a8465c27410,
     type: 2}
+  m_canChargeAttack: 1
+  minScaleHit: 1
+  maxScaleHit: 2.5
+  chargeTime: 1
   sprootchAS: {fileID: 82442188976365566}
 --- !u!114 &114394171219009564
 MonoBehaviour:

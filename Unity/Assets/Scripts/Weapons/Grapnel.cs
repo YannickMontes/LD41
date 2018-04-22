@@ -13,7 +13,7 @@ public class Grapnel : Weapon {
     {
     }
 
-    public override void CastWeaponSkill()
+    public override void CastWeaponSkill(float chargeScale)
     {
         if (m_animator)
             m_animator.SetBool("TriggerGrab", true);
@@ -23,7 +23,7 @@ public class Grapnel : Weapon {
     {
         Enemy enemyScript = other.gameObject.GetComponent<Enemy>();
         if (enemyScript != null) {
-            PaintPlane(enemyScript, Vector3.zero, Vector3.zero);
+            PaintPlane(enemyScript, Vector3.zero, Vector3.zero, 1.0f);
         }
     }
 
