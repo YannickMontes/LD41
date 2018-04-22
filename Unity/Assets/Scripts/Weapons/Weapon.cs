@@ -100,9 +100,9 @@ public abstract class Weapon : MonoBehaviour
         }
     }
 
-    protected void LaunchSplashParticles(Enemy enemyScript, Vector3 forwardDir)
+    protected void LaunchSplashParticles(Enemy enemyScript, Vector3 forwardDir, Vector3 position)
     {
-        GameObject particles = Instantiate(m_particlesPrefab, enemyScript.transform.position, Quaternion.identity);
+        GameObject particles = Instantiate(m_particlesPrefab, position, Quaternion.identity);
         particles.transform.forward = forwardDir;
         particles.transform.position += Vector3.up * 0.5f;
         particles.GetComponent<ParticlesSplasher>().SetColor(enemyScript.GetColor());
@@ -155,8 +155,14 @@ public abstract class Weapon : MonoBehaviour
         {
             forwardDirPart = direction;
         }
-
-        LaunchSplashParticles(enemyScript, forwardDirPart);
+        if (this as Grapnel != null)
+        {
+            LaunchSplashParticles(enemyScript, forwardDirPart, groundHit);
+        }
+        else
+        {
+            LaunchSplashParticles(enemyScript, forwardDirPart, enemyScript.transform.position);
+        }
 
         enemyScript.Die();
     }

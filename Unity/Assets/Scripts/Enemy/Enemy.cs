@@ -88,7 +88,8 @@ public abstract class Enemy : MonoBehaviour {
         if (IsBomb && other.tag == "PaintingZone")
         {
             Weapon currentWeapon = GameObject.Find("Player").GetComponent<PlayerController>().CurrentWeapon;
-            currentWeapon.PaintPlane(this, other.transform.position, Vector3.zero, currentWeapon.MaxScaleHit);
+            Vector3 position = new Vector3(this.transform.position.x, 0.5f, transform.position.z);
+            currentWeapon.PaintPlane(this, position, Vector3.zero, currentWeapon.MaxScaleHit);
         }
     }
 
