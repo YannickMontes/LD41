@@ -19,7 +19,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4142219213547602}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: SplatPrefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -35,7 +35,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4416962720604894}
   - component: {fileID: 212986521227077716}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: SplatSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
