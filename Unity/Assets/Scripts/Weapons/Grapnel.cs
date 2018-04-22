@@ -42,6 +42,7 @@ public class Grapnel : Weapon {
         bugRb.useGravity = true;
         bugRb.AddForce(direction * 4000f);
         HasGrabbedSomething = false;
+        grabbedBug.IsBomb = true;
     }
 
 }

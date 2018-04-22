@@ -27,6 +27,8 @@ public abstract class Enemy : MonoBehaviour {
 
     public GameObject origin;
 
+    public bool IsBomb = false;
+
     Movement movement;
 
     public bool canMove = true;
