@@ -43,11 +43,13 @@ public abstract class Gun : Weapon {
             }
             foreach (Enemy enemy in enemies)
             {
-                OnEnemyHit(enemy, ground.point);
-
+                Vector3 direction = ground.point - m_camera.transform.position;
+                Debug.DrawLine(m_camera.transform.position, ground.point,  Color.red, 2.0f);
+                direction = new Vector3(direction.x, 0.0f, direction.z);
+                OnEnemyHit(enemy, ground.point, direction);
             }
         }
     }
 
-    protected abstract void OnEnemyHit(Enemy enemy, Vector3 groundHit);
+    protected abstract void OnEnemyHit(Enemy enemy, Vector3 groundHit, Vector3 direction);
 }
