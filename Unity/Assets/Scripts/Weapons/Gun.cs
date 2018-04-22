@@ -10,7 +10,9 @@ public abstract class Gun : Weapon {
 
     protected Camera m_camera;
 
-    private void Start()
+    public Action<Vector3> onFireAction;
+
+    protected internal virtual void Start()
     {
         m_camera = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
     }
@@ -45,6 +47,9 @@ public abstract class Gun : Weapon {
             {
                 OnEnemyHit(enemy, ground.point);
 
+            }
+            if (onFireAction != null) {
+                onFireAction(hitPoints[0].point);
             }
         }
     }
