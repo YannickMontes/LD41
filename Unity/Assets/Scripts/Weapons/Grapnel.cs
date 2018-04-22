@@ -5,6 +5,12 @@ using UnityEngine;
 
 public class Grapnel : Weapon {
 
+    [SerializeField]
+    private GameObject grabZone;
+    
+    [HideInInspector]
+    public Enemy grabbedBug;
+
     public bool HasGrabbedSomething {
         get; set;
     }
@@ -15,11 +21,16 @@ public class Grapnel : Weapon {
 
     public override void CastWeaponSkill(float chargeScale)
     {
-        if (m_animator)
-            m_animator.SetBool("TriggerGrab", true);
+        if (m_animator) {
+            if (HasGrabbedSomething) {
+                m_animator.SetBool("TriggerThrow", true);
+            } else {
+                m_animator.SetBool("SomethingGrabbed", false);
+                m_animator.SetBool("TriggerGrab", true);
+            }
+        }
     }
 
-    private void OnTriggerEnter(Collider other)
     public void ThrowEnemyEffectively_IMeanItWillBeShot()
     {
 <<<<<<< HEAD
@@ -27,9 +38,16 @@ public class Grapnel : Weapon {
         if (enemyScript != null) {
             PaintPlane(enemyScript, Vector3.zero, Vector3.zero, 1.0f);
 =======
+        if (grabbedBug == null) {
+            return;
 >>>>>>> db6fd13d9d1ea53bbdf1cfb48715ab5184d89e51
         }
+        Vector3 direction = Camera.main.transform.forward;
+        Rigidbody bugRb = grabbedBug.GetComponent<Rigidbody>();
+        grabbedBug.transform.parent = null;
+        bugRb.AddForce(direction * 4000f);
+        bugRb.useGravity = true;
+        HasGrabbedSomething = false;
     }
-
 
 }
