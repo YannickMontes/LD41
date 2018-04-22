@@ -109,7 +109,7 @@ public abstract class Weapon : MonoBehaviour
         Destroy(particles, 3.0f);
     }
 
-    protected void PaintPlane(Enemy enemyScript, Vector3 groundHit, Vector3 direction, float chargeScale)
+    public void PaintPlane(Enemy enemyScript, Vector3 groundHit, Vector3 direction, float chargeScale)
     {
         //V1 Splash 
         SplashConstantSprite(enemyScript, groundHit, direction, chargeScale);

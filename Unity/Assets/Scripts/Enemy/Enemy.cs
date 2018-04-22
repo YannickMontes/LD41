@@ -83,6 +83,15 @@ public abstract class Enemy : MonoBehaviour {
         }
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        if (IsBomb && other.tag == "PaintingZone")
+        {
+            Weapon currentWeapon = GameObject.Find("Player").GetComponent<PlayerController>().CurrentWeapon;
+            currentWeapon.PaintPlane(this, other.transform.position, Vector3.zero, currentWeapon.MaxScaleHit);
+        }
+    }
+
     public void returnToOrigin()
     {
         target.transform.position = origin.transform.position;
@@ -93,4 +102,5 @@ public abstract class Enemy : MonoBehaviour {
         moveInCanvas = false;
         returnToOrigin();
     }
+
 }

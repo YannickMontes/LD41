@@ -18,16 +18,29 @@ public class PlayerController : MonoBehaviour {
     private float currentChargeScale;
     private float lerpTimeValue;
 
-	// Use this for initialization
-	void Start ()
+    public Weapon CurrentWeapon
+    {
+        get
+        {
+            return m_currentWeapon;
+        }
+
+        set
+        {
+            m_currentWeapon = value;
+        }
+    }
+
+    // Use this for initialization
+    void Start ()
     {
         if (m_weapons.Count > 0)
         {
-            m_currentWeapon = m_weapons[0];
-            currentChargeScale = m_currentWeapon.MinScaleHit;
+            CurrentWeapon = m_weapons[0];
+            currentChargeScale = CurrentWeapon.MinScaleHit;
             foreach (Weapon weapon in m_weapons)
             {
-                if (weapon != m_currentWeapon)
+                if (weapon != CurrentWeapon)
                 {
                     weapon.gameObject.SetActive(false);
                 }
@@ -59,41 +72,41 @@ public class PlayerController : MonoBehaviour {
     {
         if (m_mouseButtonHeldDown)
         {
-            if (currentChargeScale == m_currentWeapon.MinScaleHit)
+            if (currentChargeScale == CurrentWeapon.MinScaleHit)
                 lerpTimeValue = Time.deltaTime;
-            currentChargeScale = Mathf.Lerp(m_currentWeapon.MinScaleHit, m_currentWeapon.MaxScaleHit, lerpTimeValue/m_currentWeapon.ChargeTime);
+            currentChargeScale = Mathf.Lerp(CurrentWeapon.MinScaleHit, CurrentWeapon.MaxScaleHit, lerpTimeValue/CurrentWeapon.ChargeTime);
             lerpTimeValue += Time.deltaTime;
         }
         else
         {
             lerpTimeValue = 0.0f;
-            currentChargeScale = m_currentWeapon.MinScaleHit;
+            currentChargeScale = CurrentWeapon.MinScaleHit;
         }
     }
 
     private void CastWeapon()
     {
-        m_currentWeapon.CastWeaponSkill(currentChargeScale);
+        CurrentWeapon.CastWeaponSkill(currentChargeScale);
     }
 
     private void SwitchWeapon(int switchDirection)
     {
-        int currentIndex = m_weapons.IndexOf(m_currentWeapon);
+        int currentIndex = m_weapons.IndexOf(CurrentWeapon);
         currentIndex += switchDirection;
         if (currentIndex < 0) {
             currentIndex = m_weapons.Count - 1;
         }
         currentIndex = currentIndex % m_weapons.Count;
 
-        m_currentWeapon.gameObject.SetActive(false);
-        m_currentWeapon = m_weapons[currentIndex];
-        m_currentWeapon.gameObject.SetActive(true);
-        currentChargeScale = m_currentWeapon.MinScaleHit;
+        CurrentWeapon.gameObject.SetActive(false);
+        CurrentWeapon = m_weapons[currentIndex];
+        CurrentWeapon.gameObject.SetActive(true);
+        currentChargeScale = CurrentWeapon.MinScaleHit;
     }
 
     private bool InputHit()
     {
-        if (m_currentWeapon.CanChargeAttack)
+        if (CurrentWeapon.CanChargeAttack)
         {
             if (Input.GetMouseButton(0))
             {
@@ -118,7 +131,7 @@ public class PlayerController : MonoBehaviour {
 
         if (Input.GetMouseButton(0))
         {
-            if (!m_currentWeapon.CanChargeAttack)
+            if (!CurrentWeapon.CanChargeAttack)
             {
                 m_mouseButtonHeldDown = false;
                 return true;
@@ -131,7 +144,7 @@ public class PlayerController : MonoBehaviour {
         }
         else
         {
-            if (!m_currentWeapon.CanChargeAttack)
+            if (!CurrentWeapon.CanChargeAttack)
             {
                 m_mouseButtonHeldDown = false;
                 return false;
@@ -151,7 +164,7 @@ public class PlayerController : MonoBehaviour {
 
     private int InputSwitchWeapon()
     {
-        if (m_currentWeapon as Shotgun != null && (m_currentWeapon as Shotgun).IsReloading)
+        if (CurrentWeapon as Shotgun != null && (CurrentWeapon as Shotgun).IsReloading)
             return 0;
         float value = Input.GetAxis("Mouse ScrollWheel");
         if (Mathf.Approximately(0.0f, value)) {
