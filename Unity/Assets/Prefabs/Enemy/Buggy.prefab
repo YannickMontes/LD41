@@ -854,6 +854,7 @@ MonoBehaviour:
   material: {fileID: 0}
   targetPrefab: {fileID: 1162231897543594, guid: b1153d5d9c3c51a4086dd9d735497021,
     type: 2}
+  map: {fileID: 1084192117770478, guid: 943ba3f0439302e43b82e30c0e494a52, type: 2}
 --- !u!114 &114862218573113402
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -865,3 +866,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6fb1a21d94bb20543847af5c859dda0c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  map: {fileID: 1084192117770478, guid: 943ba3f0439302e43b82e30c0e494a52, type: 2}
