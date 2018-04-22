@@ -45,7 +45,7 @@ TextureImporter:
   spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spriteBorder: {x: 403, y: 380, z: 397, w: 386}
+  spriteBorder: {x: 763, y: 1016, z: 881, w: 1157}
   spritePixelsToUnits: 100
   alphaUsage: 1
   alphaIsTransparency: 1
