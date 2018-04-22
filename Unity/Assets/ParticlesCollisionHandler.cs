@@ -18,7 +18,7 @@ public class ParticlesCollisionHandler : MonoBehaviour {
 
     private void OnParticleCollision(GameObject other)
     {
-        Debug.Log(other.name);
+        //Debug.Log(other.name);
         ParticlesSplasher splasher = other.GetComponentInParent<ParticlesSplasher>();
         if (splasher != null)
         {

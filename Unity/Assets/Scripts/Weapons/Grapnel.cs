@@ -39,8 +39,8 @@ public class Grapnel : Weapon {
         Vector3 direction = Camera.main.transform.forward;
         Rigidbody bugRb = grabbedBug.GetComponent<Rigidbody>();
         grabbedBug.transform.parent = null;
-        bugRb.AddForce(direction * 4000f);
         bugRb.useGravity = true;
+        bugRb.AddForce(direction * 4000f);
         HasGrabbedSomething = false;
     }
 
