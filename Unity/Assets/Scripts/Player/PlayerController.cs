@@ -41,9 +41,10 @@ public class PlayerController : MonoBehaviour {
         {
             CastWeapon();
         }
-        if (InputSwitchWeapon())
+        int switchWeaponInput = InputSwitchWeapon();
+        if (switchWeaponInput != 0)
         {
-            SwitchWeapon();
+            SwitchWeapon(switchWeaponInput);
         }
         if (InputScreenShot())
         {
@@ -75,13 +76,15 @@ public class PlayerController : MonoBehaviour {
         m_currentWeapon.CastWeaponSkill(currentChargeScale);
     }
 
-    private void SwitchWeapon()
+    private void SwitchWeapon(int switchDirection)
     {
         int currentIndex = m_weapons.IndexOf(m_currentWeapon);
-        if (currentIndex >= m_weapons.Count - 1)
-            currentIndex = 0;
-        else
-            currentIndex++;
+        currentIndex += switchDirection;
+        if (currentIndex < 0) {
+            currentIndex = m_weapons.Count - 1;
+        }
+        currentIndex = currentIndex % m_weapons.Count;
+
         m_currentWeapon.gameObject.SetActive(false);
         m_currentWeapon = m_weapons[currentIndex];
         m_currentWeapon.gameObject.SetActive(true);
@@ -123,11 +126,18 @@ public class PlayerController : MonoBehaviour {
         }
     }
 
-    private bool InputSwitchWeapon()
+    private int InputSwitchWeapon()
     {
         if (m_currentWeapon as Shotgun != null && (m_currentWeapon as Shotgun).IsReloading)
-            return false;
-        return Input.GetAxis("Mouse ScrollWheel") != 0.0f;
+            return 0;
+        float value = Input.GetAxis("Mouse ScrollWheel");
+        if (Mathf.Approximately(0.0f, value)) {
+            return 0;
+        } else if (value < 0f) {
+            return -1;
+        } else {
+            return 1;
+        }
     }
 
     private bool InputScreenShot()

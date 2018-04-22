@@ -22,11 +22,14 @@ public abstract class Enemy : MonoBehaviour {
     float height;
 
     public float beginTime;    
-    public float lifeSpawn;
+
+    public float lifeSpawn = 60f;
 
     public GameObject origin;
 
     Movement movement;
+
+    public bool canMove = true;
 
 
     bool moveInCanvas = true;
@@ -44,7 +47,7 @@ public abstract class Enemy : MonoBehaviour {
         target.transform.position = new Vector3(UnityEngine.Random.Range(-width / 2, width / 2), 0, UnityEngine.Random.Range(-height / 2, height / 2));
         target.transform.SetParent(GameManager.instance.targets.transform);
 
-        Invoke("runAway", lifeSpawn + beginTime);
+        Invoke("runAway", lifeSpan + beginTime);
     }
 
     public void AssignMaterial(Material material)
@@ -69,11 +72,12 @@ public abstract class Enemy : MonoBehaviour {
 
     private void Update()
     {        
-        this.movement.Move(target, moveInCanvas);
+        if (canMove) {
+            this.movement.Move(target, moveInCanvas);
 
-        if(!moveInCanvas && Vector3.Distance(origin.transform.position, this.transform.position) < 2.0f)
-        {
-            this.Die();
+            if (!moveInCanvas && Vector3.Distance(origin.transform.position, this.transform.position) < 2.0f) {
+                this.Die();
+            }
         }
     }
 
