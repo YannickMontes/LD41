@@ -125,6 +125,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4379925123601204}
   - component: {fileID: 95765384211664172}
+  - component: {fileID: 114805622937932426}
   m_Layer: 0
   m_Name: Hammer
   m_TagString: Untagged
@@ -961,7 +962,7 @@ MonoBehaviour:
   m_splatPrefab: {fileID: 1004157668280934, guid: 33db6729b0ce0fc4ab9c36b4caf4a279,
     type: 2}
   m_animator: {fileID: 0}
-  m_particlesPrefab: {fileID: 1092269019447652, guid: ee4e468f86d81fb46a606a8465c27410,
+  m_particlesPrefab: {fileID: 1092269019447652, guid: f272a2f6459735a4597c7ab0820a6b6b,
     type: 2}
   m_range: 100
 --- !u!114 &114365140377480162
@@ -1098,6 +1099,18 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 8bc94ec6ed537e743b481638bdcd503d, type: 3}
   m_JumpSound: {fileID: 8300000, guid: 5897aeed9b676024fbb8c694b421a861, type: 3}
   m_LandSound: {fileID: 8300000, guid: 3b09d59f4499d45428baa7a21e954296, type: 3}
+--- !u!114 &114805622937932426
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1643697449731184}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64292497a16ac804f838113e2cfeff26, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hammerCollider: {fileID: 65929246004065074}
 --- !u!114 &114964936139358908
 MonoBehaviour:
   m_ObjectHideFlags: 1
