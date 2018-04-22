@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 33535507012091344}
   - component: {fileID: 65078990941008706}
   - component: {fileID: 23625873924803608}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: PaintingZone
   m_TagString: PaintingZone
   m_Icon: {fileID: 0}
