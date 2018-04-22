@@ -44,7 +44,7 @@ public abstract class Enemy : MonoBehaviour {
         target.transform.position = new Vector3(UnityEngine.Random.Range(-width / 2, width / 2), 0, UnityEngine.Random.Range(-height / 2, height / 2));
         target.transform.SetParent(GameManager.instance.targets.transform);
 
-        Invoke("runAway", lifeSpawn + beginTime);
+        Invoke("runAway", lifeSpan + beginTime);
     }
 
     public void AssignMaterial(Material material)

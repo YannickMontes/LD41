@@ -20,7 +20,7 @@ public class Spawn : MonoBehaviour {
     float beginTime;
 
     [SerializeField]
-    float lifeSpawn;
+    float lifeSpan=60;
 
 
     private int currentMobNumber=0;
@@ -46,7 +46,7 @@ public class Spawn : MonoBehaviour {
             mob.transform.SetParent(GameManager.instance.mobs.transform);
             mob.GetComponent<Enemy>().origin = this.gameObject;
             mob.GetComponent<Enemy>().beginTime = beginTime;
-            mob.GetComponent<Enemy>().lifeSpawn = lifeSpawn;
+            mob.GetComponent<Enemy>().lifeSpan = lifeSpan;
 
         }
         currentMobNumber++;
