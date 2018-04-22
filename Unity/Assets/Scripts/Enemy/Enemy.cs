@@ -23,7 +23,7 @@ public abstract class Enemy : MonoBehaviour {
 
     public float beginTime;    
 
-    public float lifeSpawn = 60f;
+    public float lifeSpan = 60f;
 
     public GameObject origin;
 
