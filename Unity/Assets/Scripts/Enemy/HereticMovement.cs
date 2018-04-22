@@ -9,8 +9,8 @@ public class HereticMovement : Movement {
     private GameObject map;
 
 
-    float width;
-    float height;
+    float width=0;
+    float height=0;
 
 
     public override void Move(GameObject targetGO)
@@ -27,8 +27,6 @@ public class HereticMovement : Movement {
 
         if (Vector3.Distance(transform.position, targetGO.transform.position) <= 2.0f)
         {
-           // width =ground.GetComponent<RectTransform>().rect.width;
-           // height= ground.GetComponent<RectTransform>().rect.height;
             float randomWidth = UnityEngine.Random.Range(-width/2, width/2);
             float randomHeight = UnityEngine.Random.Range(-height/2, height/2);
             targetGO.transform.position = new Vector3(randomWidth, 0, randomHeight);
