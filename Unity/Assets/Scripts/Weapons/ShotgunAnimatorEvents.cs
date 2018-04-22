@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class ShotgunAnimatorEvents : MonoBehaviour {
-
-
+    
     [SerializeField]
     private Shotgun shotgun;
+
+    [SerializeField]
+    private AudioSource gunAS;
 
     public void SetIsRealoading()
     {
@@ -16,6 +18,11 @@ public class ShotgunAnimatorEvents : MonoBehaviour {
     public void SetIsNotRealoading()
     {
         shotgun.IsReloading = false;
+    }
+
+    public void PlayShootSound()
+    {
+        gunAS.Play();
     }
 
 }
