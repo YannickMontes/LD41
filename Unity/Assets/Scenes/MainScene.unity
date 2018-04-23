@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -1430,6 +1430,11 @@ RectTransform:
   m_PrefabParentObject: {fileID: 224491519070136470, guid: ef005b8f1b2b7214b973a655e14b9fe2,
     type: 2}
   m_PrefabInternal: {fileID: 591450269}
+--- !u!1 &591450271 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1035546836612318, guid: ef005b8f1b2b7214b973a655e14b9fe2,
+    type: 2}
+  m_PrefabInternal: {fileID: 591450269}
 --- !u!1001 &594393871
 Prefab:
   m_ObjectHideFlags: 0
@@ -1817,7 +1822,7 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
-  m_AdditionalShaderChannelsFlag: 0
+  m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
@@ -2377,7 +2382,7 @@ Prefab:
         type: 2}
       propertyPath: commandPanel
       value: 
-      objectReference: {fileID: 2075533201}
+      objectReference: {fileID: 591450271}
     - target: {fileID: 114227336435582358, guid: 7c1832149060fe848bd8182d004075d1,
         type: 2}
       propertyPath: redButton
@@ -5216,11 +5221,6 @@ Prefab:
 Transform:
   m_PrefabParentObject: {fileID: 400000, guid: f282d9fb9b399dd4384b20aba08642fb, type: 2}
   m_PrefabInternal: {fileID: 2058151329}
---- !u!1 &2075533201 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1581135881413992, guid: ef005b8f1b2b7214b973a655e14b9fe2,
-    type: 2}
-  m_PrefabInternal: {fileID: 591450269}
 --- !u!1001 &2089169077
 Prefab:
   m_ObjectHideFlags: 0
