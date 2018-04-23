@@ -17,6 +17,7 @@ public class PlayerController : MonoBehaviour {
 
     private float currentChargeScale;
     private float lerpTimeValue;
+    private bool isCharging;
 
     public Weapon CurrentWeapon
     {
@@ -75,12 +76,20 @@ public class PlayerController : MonoBehaviour {
             if (currentChargeScale == CurrentWeapon.MinScaleHit)
                 lerpTimeValue = Time.deltaTime;
             currentChargeScale = Mathf.Lerp(CurrentWeapon.MinScaleHit, CurrentWeapon.MaxScaleHit, lerpTimeValue/CurrentWeapon.ChargeTime);
+            if (CurrentWeapon.GetType() == typeof(Hammer) && !isCharging) {
+                CurrentWeapon.Animator.SetTrigger("TriggerHammerCharge");
+            }
+            ShakeScreen.Instance.SetShakingActive(true);
+            ShakeScreen.Instance.SetShakingStrength(Mathf.Clamp(currentChargeScale - 1.25f, 0f, CurrentWeapon.MaxScaleHit));
             lerpTimeValue += Time.deltaTime;
+            isCharging = true;
         }
         else
         {
             lerpTimeValue = 0.0f;
             currentChargeScale = CurrentWeapon.MinScaleHit;
+            ShakeScreen.Instance.SetShakingActive(false);
+            isCharging = false;
         }
     }
 
