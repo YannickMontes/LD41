@@ -31,6 +31,18 @@ public class Hammer : Weapon
             PaintPlane(enemyScript, Vector3.zero, Vector3.zero, m_chargeScale);
             sprootchAS.Play();
         }
+        ColorCube colorCube = other.gameObject.GetComponent<ColorCube>();
+        if (colorCube != null)
+        {
+            colorCube.changeColor();
+            sprootchAS.Play();
+        }
+        SpawnButton spawnButton = other.gameObject.GetComponent<SpawnButton>();
+        if (spawnButton != null)
+        {
+            spawnButton.SpawnWave();
+            sprootchAS.Play();
+        }
     }
 
 }

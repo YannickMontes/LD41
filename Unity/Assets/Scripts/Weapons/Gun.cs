@@ -23,8 +23,8 @@ public abstract class Gun : Weapon {
 
     public override void CastWeaponSkill(float chargeScale)
     {
-        //TODO: FX
-
+        ColorCube colorCube = null;
+        SpawnButton spawnButton = null;
         RaycastHit[] hitPoints = null;
         hitPoints = Physics.RaycastAll(m_camera.transform.position, m_camera.transform.forward, m_range);
         if (hitPoints.Length > 0)
@@ -44,7 +44,22 @@ public abstract class Gun : Weapon {
                     ground = hit;
                     groundHitted = true;
                 }
+                ColorCube tmpColorCube = hit.transform.GetComponent<ColorCube>();
+                if (tmpColorCube != null)
+                {
+                    colorCube = tmpColorCube;
+                }
+                SpawnButton tmpSpawnButton = hit.transform.GetComponent<SpawnButton>();
+                if (tmpSpawnButton != null)
+                {
+                    spawnButton = tmpSpawnButton;
+                }
             }
+
+            if (spawnButton != null && enemies.Count == 0)
+                spawnButton.SpawnWave();
+            if (colorCube != null && enemies.Count == 0)
+                colorCube.changeColor();
             foreach (Enemy enemy in enemies)
             {
                 Vector3 direction;
