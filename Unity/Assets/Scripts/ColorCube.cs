@@ -7,38 +7,37 @@ public class ColorCube : MonoBehaviour {
     [SerializeField]
     private List<Material> matList;
 
-    int currentColor = 0;
     bool isChangingColor = false;
 
     public Material currentMaterial;
 
     public void changeColor()
     {
-        if (currentColor < matList.Count-1)
+        int currentIndex = matList.IndexOf(currentMaterial);
+        currentIndex++;
+        if (currentIndex >= matList.Count)
         {
-            currentColor++;
-            isChangingColor = true;
-            
+            currentMaterial = matList[0];
         }
         else
         {
-            currentColor = 0;
-            isChangingColor = false;
+            currentMaterial = matList[currentIndex];
         }
-            
+
+        isChangingColor = true;
     }
 	// Use this for initialization
 	void Start () {
-        currentMaterial = matList[currentColor];
+        if(matList !=null)
+            currentMaterial = matList[0];
     }
 	
 	// Update is called once per frame
 	void Update () {
         if (isChangingColor)
         {
-            this.GetComponent<Renderer>().material = matList[currentColor];
-            currentMaterial = matList[currentColor];
+            this.GetComponent<Renderer>().material = currentMaterial;
             isChangingColor = false;
         }
-	}
+    }
 }
