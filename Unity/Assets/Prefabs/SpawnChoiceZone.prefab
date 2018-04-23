@@ -193,7 +193,7 @@ Transform:
   m_GameObject: {fileID: 1631503023395034}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: -0.74, z: 0}
-  m_LocalScale: {x: 0.5492201, y: 0.418694, z: 0.54922014}
+  m_LocalScale: {x: 0.5821733, y: 0.48662135, z: 0.58217335}
   m_Children: []
   m_Father: {fileID: 4897548635002582}
   m_RootOrder: 0
@@ -366,7 +366,7 @@ MeshRenderer:
   m_GameObject: {fileID: 1631503023395034}
   m_Enabled: 1
   m_CastShadows: 1
-  m_ReceiveShadows: 1
+  m_ReceiveShadows: 0
   m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
@@ -400,7 +400,7 @@ MeshRenderer:
   m_GameObject: {fileID: 1064812195133616}
   m_Enabled: 1
   m_CastShadows: 1
-  m_ReceiveShadows: 1
+  m_ReceiveShadows: 0
   m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
@@ -434,7 +434,7 @@ MeshRenderer:
   m_GameObject: {fileID: 1887615216834858}
   m_Enabled: 1
   m_CastShadows: 1
-  m_ReceiveShadows: 1
+  m_ReceiveShadows: 0
   m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
@@ -468,13 +468,13 @@ MeshRenderer:
   m_GameObject: {fileID: 1713084353734578}
   m_Enabled: 1
   m_CastShadows: 1
-  m_ReceiveShadows: 1
+  m_ReceiveShadows: 0
   m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: dffb30998a8c6624593209e763f966ce, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -502,13 +502,13 @@ MeshRenderer:
   m_GameObject: {fileID: 1466966228963498}
   m_Enabled: 1
   m_CastShadows: 1
-  m_ReceiveShadows: 1
+  m_ReceiveShadows: 0
   m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: dffb30998a8c6624593209e763f966ce, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -536,7 +536,7 @@ MeshRenderer:
   m_GameObject: {fileID: 1828783652291468}
   m_Enabled: 1
   m_CastShadows: 1
-  m_ReceiveShadows: 1
+  m_ReceiveShadows: 0
   m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
@@ -570,7 +570,7 @@ MeshRenderer:
   m_GameObject: {fileID: 1668124076318956}
   m_Enabled: 1
   m_CastShadows: 1
-  m_ReceiveShadows: 1
+  m_ReceiveShadows: 0
   m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
@@ -648,8 +648,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1.1580234, y: 2.731347, z: 1.0852809}
+  m_Center: {x: -0.004402429, y: -0.63503045, z: -0.007837057}
 --- !u!65 &65331530998641360
 BoxCollider:
   m_ObjectHideFlags: 1

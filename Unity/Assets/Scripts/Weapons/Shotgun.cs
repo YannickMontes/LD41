@@ -41,6 +41,7 @@ public class Shotgun : Gun
         if (IsReloading == false) {
             base.CastWeaponSkill(chargeScale);
             Animator.SetTrigger("TriggerShoot");
+            ShakeScreen.Instance.ScreenShakeImpulsion(1f, 0.2f);
             GameObject fireParticles = Instantiate(shotgunFireShotParticles, shotgunFireShotParticles_Anchor.transform, false);
         }
     }
