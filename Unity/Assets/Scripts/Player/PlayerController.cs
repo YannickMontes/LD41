@@ -19,6 +19,8 @@ public class PlayerController : MonoBehaviour {
     private float lerpTimeValue;
     private bool isCharging;
 
+    public AudioSource saveSound;
+
     public Weapon CurrentWeapon
     {
         get
@@ -63,6 +65,7 @@ public class PlayerController : MonoBehaviour {
         if (InputScreenShot())
         {
             changeMobsStatus();
+            saveSound.Play();
             this.GetComponent<ArtExport>().exportArtToPNG();
             changeMobsStatus();
         }
