@@ -17,7 +17,7 @@ public class HereticMovement : Movement {
     {
         Rigidbody rb = GetComponent<Rigidbody>();
 
-        rb.velocity = transform.forward * 5;  
+        rb.velocity = transform.forward * 4;  
 
         Vector3 direction = targetGO.transform.position - transform.position;
         Quaternion targetQuat = Quaternion.LookRotation(direction);
