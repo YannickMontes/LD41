@@ -9,51 +9,50 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1275094371239132}
+  m_RootGameObject: {fileID: 1289966528434644}
   m_IsPrefabParent: 1
---- !u!1 &1275094371239132
+--- !u!1 &1289966528434644
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 5
   m_Component:
-  - component: {fileID: 4170360046191550}
-  - component: {fileID: 114496422027162306}
+  - component: {fileID: 4809578902039040}
+  - component: {fileID: 114641795565507948}
   m_Layer: 0
-  m_Name: Spawn01
+  m_Name: Spawner 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4170360046191550
+--- !u!4 &4809578902039040
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1275094371239132}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_GameObject: {fileID: 1289966528434644}
+  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &114496422027162306
+  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
+--- !u!114 &114641795565507948
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1275094371239132}
+  m_GameObject: {fileID: 1289966528434644}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 021157709e0e3a34285a1650b49545f1, type: 3}
+  m_Script: {fileID: 11500000, guid: c2a53a78741def344bb9258d5c8bbccf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mobNumber: 10
-  mobPrefab: {fileID: 1737023417304342, guid: d71b658c7b125c648b0aadca2ae0f30b, type: 2}
-  mobMaterial: {fileID: 2100000, guid: f5f24a950653b2c4087573d4e1768173, type: 2}
-  spawnDelay: 1
-  beginTime: 0
-  lifeSpan: 60
+  spawn: []
+  mobsNumber: 10
+  spawnPrefab: {fileID: 1275094371239132, guid: 03342904e8466fe4ab9fbab4e4e25162,
+    type: 2}
+  colorCube: {fileID: 0}

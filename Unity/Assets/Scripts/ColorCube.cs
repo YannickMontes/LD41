@@ -10,6 +10,8 @@ public class ColorCube : MonoBehaviour {
     int currentColor = 0;
     bool isChangingColor = false;
 
+    public Material currentMaterial;
+
     public void changeColor()
     {
         if (currentColor < matList.Count)
@@ -26,14 +28,15 @@ public class ColorCube : MonoBehaviour {
     }
 	// Use this for initialization
 	void Start () {
-		
-	}
+        currentMaterial = matList[currentColor];
+    }
 	
 	// Update is called once per frame
 	void Update () {
         if (isChangingColor)
         {
             this.GetComponent<Renderer>().material = matList[currentColor];
+            currentMaterial = matList[currentColor];
             isChangingColor = false;
         }
 	}

@@ -11,6 +11,12 @@ public class GameManager : MonoBehaviour
 
 	public GameObject commandPanel;
 
+    public GameObject redButton;
+    public GameObject colorCube;
+
+
+    public GameObject spawner;
+
 	void Awake()
 	{
 		if (instance == null)
@@ -32,5 +38,15 @@ public class GameManager : MonoBehaviour
 		{
 			commandPanel.SetActive(!commandPanel.active);
 		}
-	}
+
+        if (Input.GetKeyDown(KeyCode.L))
+        {
+            colorCube.GetComponent<ColorCube>().changeColor();
+        }
+
+        if (Input.GetKeyDown(KeyCode.M))
+        {
+            spawner.GetComponent<EnemySpawner>().spawnWave();
+        }
+    }
 }

@@ -5,22 +5,22 @@ using UnityEngine;
 public class Spawn : MonoBehaviour {
 
     [SerializeField]
-    int mobNumber;
+    public int mobNumber;
 
     [SerializeField]
-    GameObject mobPrefab;
+    public GameObject mobPrefab;
 
     [SerializeField]
-    Material mobMaterial;
+    public Material mobMaterial;
 
     [SerializeField]
-    float spawnDelay;
+    public float spawnDelay;
 
     [SerializeField]
-    float beginTime;
+    public float beginTime;
 
     [SerializeField]
-    float lifeSpan=60;
+    public float lifeSpan = 60;
 
 
     private int currentMobNumber=0;
@@ -39,8 +39,7 @@ public class Spawn : MonoBehaviour {
             CancelInvoke();
         }
         else
-        {
-           
+        {           
             GameObject mob = Instantiate(mobPrefab, new Vector3(this.transform.position.x, 0.0f, this.transform.position.z), this.transform.rotation);
             mob.GetComponent<Enemy>().AssignMaterial(mobMaterial);         
             mob.transform.SetParent(GameManager.instance.mobs.transform);
@@ -51,6 +50,14 @@ public class Spawn : MonoBehaviour {
         }
         currentMobNumber++;
         
+    }
+
+    public void setSpawnParam(int mobNumber, Material mobMaterial)
+    {
+        this.mobNumber = mobNumber;
+        this.mobMaterial = mobMaterial;
+    
+
     }
 
 

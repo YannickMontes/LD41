@@ -7,11 +7,18 @@ public class EnemySpawner : MonoBehaviour {
     [SerializeField]
     private List<GameObject> spawn;
 
+    [SerializeField]
+    private int mobsNumber = 10;
 
+    [SerializeField]
+    private GameObject spawnPrefab;
+
+    public GameObject colorCube;
+
+    private List<GameObject> spawns;
     // Use this for initialization
     void Start () {
-        for(int i = 0; i < spawn.Count; i++)
-            spawn[i].GetComponent<Spawn>().SpawnEnemies();
+        
 	}
 	
 	// Update is called once per frame
@@ -19,4 +26,11 @@ public class EnemySpawner : MonoBehaviour {
 		
 	}
 
+
+    public void spawnWave()
+    {
+        GameObject spawn = Instantiate(spawnPrefab, new Vector3(this.transform.position.x, 0.0f, this.transform.position.z), this.transform.rotation);
+        spawn.GetComponent<Spawn>().setSpawnParam(mobsNumber, colorCube.GetComponent<ColorCube>().currentMaterial);
+        spawn.GetComponent<Spawn>().SpawnEnemies();
+    }
 }
