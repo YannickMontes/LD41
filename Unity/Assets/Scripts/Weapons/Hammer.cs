@@ -30,6 +30,7 @@ public class Hammer : Weapon
         {
             PaintPlane(enemyScript, Vector3.zero, Vector3.zero, m_chargeScale);
             sprootchAS.Play();
+            ShakeScreen.Instance.ScreenShakeImpulsion(2.5f * chargeTime, 0.2f);
         }
         ColorCube colorCube = other.gameObject.GetComponent<ColorCube>();
         if (colorCube != null)
