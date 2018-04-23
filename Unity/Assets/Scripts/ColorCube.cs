@@ -14,10 +14,11 @@ public class ColorCube : MonoBehaviour {
 
     public void changeColor()
     {
-        if (currentColor < matList.Count)
+        if (currentColor < matList.Count-1)
         {
             currentColor++;
             isChangingColor = true;
+            
         }
         else
         {
