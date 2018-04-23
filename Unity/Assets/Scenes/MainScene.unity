@@ -4176,39 +4176,35 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 114394171219009564, guid: 68cfbc277afdb33478d1b9b06153b8be,
-        type: 2}
-      propertyPath: mobs
-      value: 
-      objectReference: {fileID: 501319157}
     - target: {fileID: 114964936139358908, guid: 68cfbc277afdb33478d1b9b06153b8be,
         type: 2}
       propertyPath: cameraTop
       value: 
       objectReference: {fileID: 1389212218}
-    - target: {fileID: 114265850982231126, guid: 68cfbc277afdb33478d1b9b06153b8be,
+    - target: {fileID: 114394171219009564, guid: 68cfbc277afdb33478d1b9b06153b8be,
         type: 2}
-      propertyPath: m_particlesPrefab
+      propertyPath: mobs
       value: 
-      objectReference: {fileID: 1092269019447652, guid: 8df656d1f1bfe834b8eb88366f6a4e77,
-        type: 2}
-    - target: {fileID: 1031273580567672, guid: 68cfbc277afdb33478d1b9b06153b8be, type: 2}
-      propertyPath: m_IsActive
-      value: 1
+      objectReference: {fileID: 501319157}
+    - target: {fileID: 4036158010647392, guid: 68cfbc277afdb33478d1b9b06153b8be, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4709535831936160, guid: 68cfbc277afdb33478d1b9b06153b8be, type: 2}
+    - target: {fileID: 4036158010647392, guid: 68cfbc277afdb33478d1b9b06153b8be, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0.70710677
+      objectReference: {fileID: 0}
+    - target: {fileID: 4036158010647392, guid: 68cfbc277afdb33478d1b9b06153b8be, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 4036158010647392, guid: 68cfbc277afdb33478d1b9b06153b8be, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4036158010647392, guid: 68cfbc277afdb33478d1b9b06153b8be, type: 2}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: -180
-      objectReference: {fileID: 0}
-    - target: {fileID: 82949858918609774, guid: 68cfbc277afdb33478d1b9b06153b8be,
-        type: 2}
-      propertyPath: spreadCustomCurve.m_RotationOrder
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 82589150179875978, guid: 68cfbc277afdb33478d1b9b06153b8be,
-        type: 2}
-      propertyPath: spreadCustomCurve.m_RotationOrder
-      value: 0
+      value: 180
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 68cfbc277afdb33478d1b9b06153b8be, type: 2}
