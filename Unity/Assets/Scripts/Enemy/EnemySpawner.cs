@@ -13,7 +13,7 @@ public class EnemySpawner : MonoBehaviour {
     [SerializeField]
     private GameObject spawnPrefab;
 
-    public GameObject colorCube;
+    public ColorCube colorCube;
 
     private List<GameObject> spawns;
     // Use this for initialization
@@ -30,7 +30,7 @@ public class EnemySpawner : MonoBehaviour {
     public void spawnWave()
     {
         GameObject spawn = Instantiate(spawnPrefab, new Vector3(this.transform.position.x, 0.0f, this.transform.position.z), this.transform.rotation);
-        spawn.GetComponent<Spawn>().setSpawnParam(mobsNumber, colorCube.GetComponent<ColorCube>().currentMaterial);
+        spawn.GetComponent<Spawn>().setSpawnParam(mobsNumber, colorCube.currentMaterial);
         spawn.GetComponent<Spawn>().SpawnEnemies();
     }
 }

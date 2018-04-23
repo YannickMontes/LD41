@@ -5,7 +5,7 @@ using UnityEngine;
 public class SpawnButton : MonoBehaviour
 {
     [SerializeField]
-    private GameObject m_spawner;
+    private EnemySpawner m_spawner;
 
     [SerializeField]
     private Animator animator;
@@ -13,7 +13,7 @@ public class SpawnButton : MonoBehaviour
     public void SpawnWave()
     {
         animator.SetTrigger("BtnTrigger");
-        m_spawner.GetComponent<EnemySpawner>().spawnWave();
+        m_spawner.spawnWave();
     }
 
 

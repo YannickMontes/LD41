@@ -56,8 +56,8 @@ GameObject:
   - component: {fileID: 33777413131444286}
   - component: {fileID: 65759839828481504}
   - component: {fileID: 23172077754020626}
-  - component: {fileID: 114697100218191534}
   - component: {fileID: 95138952185140136}
+  - component: {fileID: 114243026145217426}
   m_Layer: 0
   m_Name: RedButtonBase
   m_TagString: Untagged
@@ -272,7 +272,7 @@ TextMesh:
   m_Color:
     serializedVersion: 2
     rgba: 4284966759
---- !u!114 &114697100218191534
+--- !u!114 &114243026145217426
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
