@@ -37,7 +37,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4276844648025966}
   - component: {fileID: 33763065853415434}
-  - component: {fileID: 136625268615398900}
   - component: {fileID: 23598588634862892}
   m_Layer: 0
   m_Name: RedButton
@@ -57,6 +56,8 @@ GameObject:
   - component: {fileID: 33777413131444286}
   - component: {fileID: 65759839828481504}
   - component: {fileID: 23172077754020626}
+  - component: {fileID: 114697100218191534}
+  - component: {fileID: 95138952185140136}
   m_Layer: 0
   m_Name: RedButtonBase
   m_TagString: Untagged
@@ -86,8 +87,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1710604199559052}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.63, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.26, z: 0.5}
+  m_LocalPosition: {x: 0, y: -0.74, z: 0}
+  m_LocalScale: {x: 0.5492201, y: 0.418694, z: 0.54922014}
   m_Children: []
   m_Father: {fileID: 4192159619501928}
   m_RootOrder: 0
@@ -233,6 +234,23 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!95 &95138952185140136
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1728605011427900}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 0f7c8fdf0bcaf944aac4e89b5e00c871, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!102 &102193788929520624
 TextMesh:
   serializedVersion: 3
@@ -254,16 +272,16 @@ TextMesh:
   m_Color:
     serializedVersion: 2
     rgba: 4284966759
---- !u!136 &136625268615398900
-CapsuleCollider:
+--- !u!114 &114697100218191534
+MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1710604199559052}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_GameObject: {fileID: 1728605011427900}
   m_Enabled: 1
-  m_Radius: 0.5
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b9987937f459024a8329db317c49f9e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_spawner: {fileID: 0}
+  animator: {fileID: 95138952185140136}

@@ -7,12 +7,15 @@ public class ColorCube : MonoBehaviour {
     [SerializeField]
     private List<Material> matList;
 
+    [SerializeField]
+    private Animator animator;
+
     bool isChangingColor = false;
 
     public Material currentMaterial;
 
-    public void changeColor()
-    {
+    public void changeColor() {
+        animator.SetTrigger("TriggerBtn");
         int currentIndex = matList.IndexOf(currentMaterial);
         currentIndex++;
         if (currentIndex >= matList.Count)
