@@ -2073,6 +2073,41 @@ Prefab:
       propertyPath: m_spawner
       value: 
       objectReference: {fileID: 194716047}
+    - target: {fileID: 23909920197110490, guid: d53221ca41e318d4390a1b3b0d056bfe,
+        type: 2}
+      propertyPath: m_ReceiveShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 23854125533023100, guid: d53221ca41e318d4390a1b3b0d056bfe,
+        type: 2}
+      propertyPath: m_ReceiveShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 23979760921363808, guid: d53221ca41e318d4390a1b3b0d056bfe,
+        type: 2}
+      propertyPath: m_ReceiveShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 23587515790680748, guid: d53221ca41e318d4390a1b3b0d056bfe,
+        type: 2}
+      propertyPath: m_ReceiveShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 23999894440699508, guid: d53221ca41e318d4390a1b3b0d056bfe,
+        type: 2}
+      propertyPath: m_ReceiveShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 23620442404621174, guid: d53221ca41e318d4390a1b3b0d056bfe,
+        type: 2}
+      propertyPath: m_ReceiveShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 23833350040810286, guid: d53221ca41e318d4390a1b3b0d056bfe,
+        type: 2}
+      propertyPath: m_ReceiveShadows
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d53221ca41e318d4390a1b3b0d056bfe, type: 2}
   m_IsPrefabParent: 0
