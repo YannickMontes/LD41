@@ -4384,7 +4384,6 @@ Prefab:
       propertyPath: m_LocalEulerAnglesHint.y
       value: -180
       objectReference: {fileID: 0}
-<<<<<<< HEAD
     - target: {fileID: 82949858918609774, guid: 68cfbc277afdb33478d1b9b06153b8be,
         type: 2}
       propertyPath: spreadCustomCurve.m_RotationOrder
@@ -4394,17 +4393,6 @@ Prefab:
         type: 2}
       propertyPath: spreadCustomCurve.m_RotationOrder
       value: 0
-=======
-    - target: {fileID: 82989560409666594, guid: 68cfbc277afdb33478d1b9b06153b8be,
-        type: 2}
-      propertyPath: m_audioClip
-      value: 
-      objectReference: {fileID: 8300000, guid: a2a9679a7e39c0f42a6a4cb4a75a92f4, type: 3}
-    - target: {fileID: 82989560409666594, guid: 68cfbc277afdb33478d1b9b06153b8be,
-        type: 2}
-      propertyPath: m_Volume
-      value: 1
->>>>>>> b23eba8fef3b9d45d0c436f9c676779416786902
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 68cfbc277afdb33478d1b9b06153b8be, type: 2}
