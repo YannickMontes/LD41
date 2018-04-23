@@ -4332,11 +4332,6 @@ Prefab:
       propertyPath: mobs
       value: 
       objectReference: {fileID: 501319157}
-    - target: {fileID: 82721193259162438, guid: 68cfbc277afdb33478d1b9b06153b8be,
-        type: 2}
-      propertyPath: m_PlayOnAwake
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 68cfbc277afdb33478d1b9b06153b8be, type: 2}
   m_IsPrefabParent: 0
