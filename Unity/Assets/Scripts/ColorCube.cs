@@ -41,11 +41,11 @@ public class ColorCube : MonoBehaviour {
         }
     }
 
-    private void OnTriggerEnter(Collider other)
+   /* private void OnTriggerEnter(Collider other)
     {
         if (other.GetComponentInParent<Weapon>() != null)
         {
             changeColor();
         }
-    }
+    }*/
 }
