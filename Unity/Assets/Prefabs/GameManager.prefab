@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4914723263881282}
   - component: {fileID: 82487162136310232}
   - component: {fileID: 114227336435582358}
+  - component: {fileID: 114423311025026896}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -134,3 +135,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targets: {fileID: 0}
   mobs: {fileID: 0}
+  commandPanel: {fileID: 0}
+  redButton: {fileID: 0}
+  colorCube: {fileID: 0}
+  spawner: {fileID: 0}
+--- !u!114 &114423311025026896
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1046541751683474}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 981917393008e4d46983a21b309ebc38, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
